@@ -14,12 +14,14 @@ final class BasicRecipeCell: UICollectionViewCell {
     @IBOutlet weak var contentLabel: UILabel!
 
     private let titles: [String] = [
+        "계란 예쁘게 삶는 법✨",
         "1. 상온에 미리 꺼내두기",
         "2. 센 불로 끓이기",
-        "3. 끓기 시작하면 중불로 줄이기",
-        "4. 찬물로 식혀주기"
+        "3. 중불로 줄이기",
+        "4. 찬물로 식히기"
     ]
     private let contents: [String] = [
+        "노른자가 중앙에 오도록 예쁘게 삶아는 방법입니다~!",
         "1시간 전에 달걀을 미리 꺼내주세요. 냉기를 뺀 후 삶아야 깨지지 않아요. 급한 경우 따뜻한 물로 씻어주세요.",
         "계란이 잠길 정도로 물을 붓고 소금과 식초 한 큰 술을 넣어주세요. 센 불에서 끓기 전까지 한 방향으로 저어주면 노른자가 중앙으로 와요.",
         "물이 보글보글 끓기 시작하면 중불로 불을 낮춰주세요.",

@@ -21,7 +21,7 @@ extension BasicRecipeViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return 4
+        return 5
     }
     
     /// 셀 구성
