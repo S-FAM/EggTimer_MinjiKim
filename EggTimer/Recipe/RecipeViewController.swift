@@ -12,7 +12,9 @@ final class RecipeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        RecipesSearchManager().request(start: 1, display: 10) { value in
+            print(value)
+        }
     }
 }
 
