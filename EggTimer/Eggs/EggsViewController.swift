@@ -8,6 +8,7 @@
 import UIKit
 
 final class EggsViewController: UIViewController {
+    private let images: [String] = ["egg5", "egg6", "egg7", "egg8", "egg9", "egg10"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,5 +38,9 @@ extension EggsViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.update(indexPath.row)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: NSNotification.Name("selectedEgg"), object: images[indexPath.row])
     }
 }

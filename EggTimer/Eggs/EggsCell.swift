@@ -18,7 +18,7 @@ final class EggsCell: UICollectionViewCell {
     private let titles: [String] = ["5분", "6분", "7분", "8분", "9분", "10분"]
     private let contents: [String] = [
         "노른자가 흐르는 반숙", "노른자가 흐를 듯한 반숙", "노른자가 촉촉한 반숙",
-        "노른자가 퍽퍽하지 않은 완숙", "노른자가 촉촉한 완숙", "노른자가 퍽퍽한 완숙"
+        "노른자가 적당히 익은 완숙", "노른자가 촉촉한 완숙", "노른자가 퍽퍽한 완숙"
     ]
     
     func update(_ row: Int) {

@@ -19,6 +19,7 @@
 		A535361728339000008D865E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535361628339000008D865E /* TimerViewController.swift */; };
 		A535361A2833AA97008D865E /* EggsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53536192833AA97008D865E /* EggsViewController.swift */; };
 		A535361D2833AB05008D865E /* EggsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535361C2833AB05008D865E /* EggsCell.swift */; };
+		A53536212833B2F3008D865E /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53536202833B2F3008D865E /* TimerViewModel.swift */; };
 		A569DC3C2832924B009E579B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3B2832924B009E579B /* AppDelegate.swift */; };
 		A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3D2832924B009E579B /* SceneDelegate.swift */; };
 		A569DC432832924B009E579B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A569DC412832924B009E579B /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		A535361628339000008D865E /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A53536192833AA97008D865E /* EggsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggsViewController.swift; sourceTree = "<group>"; };
 		A535361C2833AB05008D865E /* EggsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggsCell.swift; sourceTree = "<group>"; };
+		A53536202833B2F3008D865E /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		A569DC382832924B009E579B /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A569DC3B2832924B009E579B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A569DC3D2832924B009E579B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A535361628339000008D865E /* TimerViewController.swift */,
+				A53536202833B2F3008D865E /* TimerViewModel.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */,
 				A535361A2833AA97008D865E /* EggsViewController.swift in Sources */,
 				A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */,
+				A53536212833B2F3008D865E /* TimerViewModel.swift in Sources */,
 				A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */,
 				A535361728339000008D865E /* TimerViewController.swift in Sources */,
 				A5D2808028333AB200228011 /* RecipeViewModel.swift in Sources */,

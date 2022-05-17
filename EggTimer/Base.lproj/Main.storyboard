@@ -37,9 +37,28 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mg9-oO-s24" customClass="CircularSlider" customModule="HGCircularSlider">
                                 <rect key="frame" x="30" y="88" width="354" height="354"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg5" translatesAutoresizingMaskIntoConstraints="NO" id="TeQ-Dw-2Lj">
+                                        <rect key="frame" x="57" y="50" width="240" height="127"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TeQ-Dw-2Lj" secondAttribute="height" multiplier="15:8" constant="2" id="EwO-WG-jw9"/>
+                                            <constraint firstAttribute="width" constant="240" id="K7D-rr-Srm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7e-Yb-eXS">
+                                        <rect key="frame" x="88" y="197" width="178" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="K7e-Yb-eXS" firstAttribute="top" secondItem="TeQ-Dw-2Lj" secondAttribute="bottom" constant="20" id="7dT-4o-sDL"/>
+                                    <constraint firstItem="TeQ-Dw-2Lj" firstAttribute="top" secondItem="Mg9-oO-s24" secondAttribute="top" constant="50" id="9xd-JC-7LK"/>
+                                    <constraint firstItem="TeQ-Dw-2Lj" firstAttribute="centerX" secondItem="Mg9-oO-s24" secondAttribute="centerX" id="PDP-Ro-VpT"/>
                                     <constraint firstAttribute="width" secondItem="Mg9-oO-s24" secondAttribute="height" multiplier="1:1" id="W93-QG-aXb"/>
+                                    <constraint firstItem="K7e-Yb-eXS" firstAttribute="centerX" secondItem="TeQ-Dw-2Lj" secondAttribute="centerX" id="Zpt-dl-G5j"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -125,7 +144,9 @@
                     <connections>
                         <outlet property="cancelButton" destination="uZd-4T-9o6" id="QcW-U1-uIV"/>
                         <outlet property="circularSlider" destination="Mg9-oO-s24" id="dYM-Pl-N72"/>
+                        <outlet property="eggImageView" destination="TeQ-Dw-2Lj" id="jhu-sU-NfH"/>
                         <outlet property="startButton" destination="Pup-r9-8aI" id="L0Y-wY-M81"/>
+                        <outlet property="timeLabel" destination="K7e-Yb-eXS" id="XHY-hh-K1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yz-yC-85P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -389,7 +410,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-we-BdC">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-we-BdC">
                                 <rect key="frame" x="0.0" y="27" width="414" height="264"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="xQO-Ic-niM">
@@ -406,23 +427,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="95" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NMU-f7-d80">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NMU-f7-d80">
                                                     <rect key="frame" x="0.0" y="0.0" width="95" height="190"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg5" translatesAutoresizingMaskIntoConstraints="NO" id="cuA-Qw-xwv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="95" height="108.5"/>
+                                                            <rect key="frame" x="7.5" y="0.0" width="80" height="105.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="cuA-Qw-xwv" secondAttribute="height" multiplier="7:8" id="zmU-kX-nZB"/>
+                                                                <constraint firstAttribute="width" constant="80" id="i1S-it-0En"/>
+                                                                <constraint firstAttribute="width" secondItem="cuA-Qw-xwv" secondAttribute="height" multiplier="3:4" constant="1" id="zmU-kX-nZB"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rH-uE-EV8">
-                                                            <rect key="frame" x="0.0" y="113.5" width="95" height="29"/>
+                                                            <rect key="frame" x="32.5" y="110.5" width="30" height="29"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="노른자가 줄줄 흐르는 반숙" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-fx-THn">
-                                                            <rect key="frame" x="0.0" y="147.5" width="95" height="42.5"/>
+                                                            <rect key="frame" x="10" y="144.5" width="75" height="45.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
