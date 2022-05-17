@@ -7,6 +7,7 @@
 
 import HGCircularSlider
 import UIKit
+import WaterDrops
 
 final class TimerViewController: UIViewController {
     private let viewModel = TimerViewModel()
@@ -33,6 +34,24 @@ final class TimerViewController: UIViewController {
 //        circularSlider.startPointValue = 1 * 60 * 60
 //        circularSlider.endPointValue = 8 * 60 * 60
 //        circularSlider.numberOfRounds = 2 // Two rotations for full 24h range
+        
+        // 보글보글 효과
+        let waterDropsView = WaterDropsView(
+            frame: timeLabel.frame,
+            direction: .up,
+            dropNum: 10,
+            color: .white,
+            minDropSize: 10,
+            maxDropSize: 20,
+            minLength: 50,
+            maxLength: 100,
+            minDuration: 4,
+            maxDuration: 8
+        )
+        
+        // add animation
+        waterDropsView.addAnimation()
+        view.addSubview(waterDropsView)
         
         NotificationCenter.default.addObserver(
             self,

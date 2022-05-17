@@ -14,7 +14,7 @@ final class BasicRecipeCell: UICollectionViewCell {
     @IBOutlet weak var contentLabel: UILabel!
 
     private let titles: [String] = [
-        "계란 예쁘게 삶는 법 ➜",
+        "달걀 예쁘게 삶는 법 ➜",
         "1. 상온에 미리 꺼내두기",
         "2. 센 불로 끓이기",
         "3. 중불로 줄이기",

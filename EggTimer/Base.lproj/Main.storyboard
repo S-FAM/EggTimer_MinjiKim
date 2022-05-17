@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="1116" y="475"/>
         </scene>
-        <!--삶은 계란 레시피-->
+        <!--삶은 달걀 레시피-->
         <scene sceneID="ZAa-1E-emL">
             <objects>
                 <viewController id="Agy-mJ-GOV" customClass="RecipeViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                             <constraint firstItem="5bQ-65-x6e" firstAttribute="top" secondItem="7Sf-wb-gl6" secondAttribute="top" id="jox-9K-KYd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="삶은 계란 레시피" id="kYB-bH-MI6"/>
+                    <navigationItem key="navigationItem" title="삶은 달걀 레시피" id="kYB-bH-MI6"/>
                     <connections>
                         <outlet property="tableview" destination="5bQ-65-x6e" id="gnL-XI-C5m"/>
                         <segue destination="BM0-gB-DgV" kind="push" identifier="pushToRecipeDetail" id="zhh-yT-vc0"/>
@@ -404,8 +404,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▼ 희망하는 삶기 정도를 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czz-Tg-ziH">
-                                <rect key="frame" x="10" y="10" width="211.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▼ 희망하는 달걀 삶기 정도를 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czz-Tg-ziH">
+                                <rect key="frame" x="10" y="10" width="239.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

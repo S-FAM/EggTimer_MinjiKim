@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1DC73AEEEE9AF5F7731DD9 /* Pods_EggTimer_EggTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3112C50F5DF88C2733FEC158 /* Pods_EggTimer_EggTimerUITests.framework */; };
+		592AFB6FBAFD4C11E786EEE1 /* Pods_EggTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B71AEB7CE8E76BCDC3288 /* Pods_EggTimer.framework */; };
 		A53535FD28334CD4008D865E /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FC28334CD4008D865E /* Recipes.swift */; };
 		A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FF28334D01008D865E /* RecipesSearchManager.swift */; };
 		A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360228334D18008D865E /* RecipesRequestModel.swift */; };
@@ -33,6 +35,7 @@
 		A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807D28333A9F00228011 /* RecipeViewController.swift */; };
 		A5D2808028333AB200228011 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807F28333AB100228011 /* RecipeViewModel.swift */; };
 		A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2808228333B5D00228011 /* RecipeCell.swift */; };
+		F2311F6B4B4D395293AE6AE7 /* Pods_EggTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EA83322CD65CCAFF7C69103 /* Pods-EggTimer-EggTimerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer-EggTimerUITests.debug.xcconfig"; path = "Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3112C50F5DF88C2733FEC158 /* Pods_EggTimer_EggTimerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimer_EggTimerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E6410E47077580723138B44 /* Pods-EggTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-EggTimerTests/Pods-EggTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		804B71AEB7CE8E76BCDC3288 /* Pods_EggTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2357BD9007D6D94CB70183B /* Pods-EggTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerTests.release.xcconfig"; path = "Target Support Files/Pods-EggTimerTests/Pods-EggTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		A53535FC28334CD4008D865E /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		A53535FF28334D01008D865E /* RecipesSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchManager.swift; sourceTree = "<group>"; };
 		A535360228334D18008D865E /* RecipesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequestModel.swift; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 		A5D2807D28333A9F00228011 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		A5D2807F28333AB100228011 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		A5D2808228333B5D00228011 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		AB8CBA33673432F9FB5B69C2 /* Pods-EggTimer-EggTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer-EggTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CF0ADCB486FFDFC51C1C42 /* Pods-EggTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.release.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.release.xcconfig"; sourceTree = "<group>"; };
+		F8209670B4D9FEDA416158A6 /* Pods-EggTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.debug.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 			files = (
 				A535360828335198008D865E /* Alamofire in Frameworks */,
 				A535361528338ECA008D865E /* HGCircularSlider in Frameworks */,
+				592AFB6FBAFD4C11E786EEE1 /* Pods_EggTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2311F6B4B4D395293AE6AE7 /* Pods_EggTimerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +118,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1DC73AEEEE9AF5F7731DD9 /* Pods_EggTimer_EggTimerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		641BFE11DEA9EBE45573E6DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				804B71AEB7CE8E76BCDC3288 /* Pods_EggTimer.framework */,
+				3112C50F5DF88C2733FEC158 /* Pods_EggTimer_EggTimerUITests.framework */,
+				B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71B292BBE3C4344AAD3AFCFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8209670B4D9FEDA416158A6 /* Pods-EggTimer.debug.xcconfig */,
+				B8CF0ADCB486FFDFC51C1C42 /* Pods-EggTimer.release.xcconfig */,
+				2EA83322CD65CCAFF7C69103 /* Pods-EggTimer-EggTimerUITests.debug.xcconfig */,
+				AB8CBA33673432F9FB5B69C2 /* Pods-EggTimer-EggTimerUITests.release.xcconfig */,
+				5E6410E47077580723138B44 /* Pods-EggTimerTests.debug.xcconfig */,
+				A2357BD9007D6D94CB70183B /* Pods-EggTimerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A53535FE28334CD8008D865E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +224,8 @@
 				A569DC512832924C009E579B /* EggTimerTests */,
 				A569DC5B2832924C009E579B /* EggTimerUITests */,
 				A569DC392832924B009E579B /* Products */,
+				71B292BBE3C4344AAD3AFCFB /* Pods */,
+				641BFE11DEA9EBE45573E6DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -271,9 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A569DC622832924C009E579B /* Build configuration list for PBXNativeTarget "EggTimer" */;
 			buildPhases = (
+				B6EE3FD3C2B0B677AB494DA6 /* [CP] Check Pods Manifest.lock */,
 				A569DC342832924B009E579B /* Sources */,
 				A569DC352832924B009E579B /* Frameworks */,
 				A569DC362832924B009E579B /* Resources */,
+				F386EDB9110CE5B93E39A249 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +335,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A569DC652832924C009E579B /* Build configuration list for PBXNativeTarget "EggTimerTests" */;
 			buildPhases = (
+				992575BA610D8E5B6CDC4D9F /* [CP] Check Pods Manifest.lock */,
 				A569DC4A2832924C009E579B /* Sources */,
 				A569DC4B2832924C009E579B /* Frameworks */,
 				A569DC4C2832924C009E579B /* Resources */,
@@ -310,9 +354,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A569DC682832924C009E579B /* Build configuration list for PBXNativeTarget "EggTimerUITests" */;
 			buildPhases = (
+				A34DD1083984F0F7569B4E0D /* [CP] Check Pods Manifest.lock */,
 				A569DC542832924C009E579B /* Sources */,
 				A569DC552832924C009E579B /* Frameworks */,
 				A569DC562832924C009E579B /* Resources */,
+				7641B9A20714A6134A5AD669 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,7 +403,7 @@
 			);
 			mainGroup = A569DC2F2832924B009E579B;
 			packageReferences = (
-				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 				A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 			);
 			productRefGroup = A569DC392832924B009E579B /* Products */;
@@ -397,6 +443,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7641B9A20714A6134A5AD669 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		992575BA610D8E5B6CDC4D9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EggTimerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A34DD1083984F0F7569B4E0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EggTimer-EggTimerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6EE3FD3C2B0B677AB494DA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EggTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F386EDB9110CE5B93E39A249 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimer/Pods-EggTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimer/Pods-EggTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EggTimer/Pods-EggTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A569DC342832924B009E579B /* Sources */ = {
@@ -592,6 +741,7 @@
 		};
 		A569DC632832924C009E579B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8209670B4D9FEDA416158A6 /* Pods-EggTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -620,6 +770,7 @@
 		};
 		A569DC642832924C009E579B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8CF0ADCB486FFDFC51C1C42 /* Pods-EggTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -648,6 +799,7 @@
 		};
 		A569DC662832924C009E579B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6410E47077580723138B44 /* Pods-EggTimerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -668,6 +820,7 @@
 		};
 		A569DC672832924C009E579B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2357BD9007D6D94CB70183B /* Pods-EggTimerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -688,6 +841,7 @@
 		};
 		A569DC692832924C009E579B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EA83322CD65CCAFF7C69103 /* Pods-EggTimer-EggTimerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -706,6 +860,7 @@
 		};
 		A569DC6A2832924C009E579B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB8CBA33673432F9FB5B69C2 /* Pods-EggTimer-EggTimerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -764,7 +919,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -785,7 +940,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		A535360728335198008D865E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 		A535361428338ECA008D865E /* HGCircularSlider */ = {
