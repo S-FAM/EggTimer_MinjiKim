@@ -1,5 +1,5 @@
 //
-//  Recipe.swift
+//  Recipes.swift
 //  EggTimer
 //
 //  Created by 김민지 on 2022/05/17.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe: Decodable {
+struct Recipes: Decodable {
     let title: String       // 제목
     let link: String        // 블로그 링크
     let description: String // 요약 내용

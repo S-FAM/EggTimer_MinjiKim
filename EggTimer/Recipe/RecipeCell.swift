@@ -10,7 +10,7 @@ import UIKit
 final class RecipeCell: UITableViewCell {
     static let identifier = "RecipeCell"
     
-    func update(_ recipe: Recipe) {
+    func update(_ recipe: Recipes) {
         textLabel?.text = recipe.title.htmlEscaped
         detailTextLabel?.text = recipe.description.htmlEscaped
     }

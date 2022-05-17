@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A53535FD28334CD4008D865E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FC28334CD4008D865E /* Recipe.swift */; };
+		A53535FD28334CD4008D865E /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FC28334CD4008D865E /* Recipes.swift */; };
 		A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FF28334D01008D865E /* RecipesSearchManager.swift */; };
 		A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360228334D18008D865E /* RecipesRequestModel.swift */; };
 		A535360528334D22008D865E /* RecipesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360428334D22008D865E /* RecipesResponseModel.swift */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A53535FC28334CD4008D865E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A53535FC28334CD4008D865E /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		A53535FF28334D01008D865E /* RecipesSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchManager.swift; sourceTree = "<group>"; };
 		A535360228334D18008D865E /* RecipesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequestModel.swift; sourceTree = "<group>"; };
 		A535360428334D22008D865E /* RecipesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesResponseModel.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		A53535FE28334CD8008D865E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A53535FC28334CD4008D865E /* Recipe.swift */,
+				A53535FC28334CD4008D865E /* Recipes.swift */,
 				A535360228334D18008D865E /* RecipesRequestModel.swift */,
 				A535360428334D22008D865E /* RecipesResponseModel.swift */,
 			);
@@ -365,7 +365,7 @@
 				A5D28076283328D100228011 /* BasicRecipeViewController.swift in Sources */,
 				A535360A2833532D008D865E /* NaverAPIKey.swift in Sources */,
 				A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */,
-				A53535FD28334CD4008D865E /* Recipe.swift in Sources */,
+				A53535FD28334CD4008D865E /* Recipes.swift in Sources */,
 				A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */,
 				A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */,
 				A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */,
