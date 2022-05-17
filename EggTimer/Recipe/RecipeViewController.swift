@@ -9,6 +9,9 @@ import UIKit
 
 final class RecipeViewController: UIViewController {
     private let viewModel = RecipeViewModel()
+    
+    /// RecipeDetailViewController를 push하는 Segue의 identifier
+    private let segueIdentifier = "pushToRecipeDetail"
 
     @IBOutlet weak var tableview: UITableView!
     
@@ -23,6 +26,18 @@ final class RecipeViewController: UIViewController {
             }
         }
     }
+    
+    // 세그웨이 실행되면 선택된 레시피를 상세화면으로 넘겨주면서 push 하기
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let vc = segue.destination as? RecipeDetailViewController
+            
+            if let row = sender as? Int {
+                let recipe = viewModel.recipeInfo(at: row)
+                vc?.recipe = recipe
+            }
+        }
+    }
 }
 
 // MARK: - UITableView
@@ -32,7 +47,7 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return viewModel.recipes.count
+        return viewModel.numOfRecipes
     }
     
     /// 셀 구성
@@ -46,7 +61,7 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
             for: indexPath
         ) as? RecipeCell else { return UITableViewCell() }
         
-        let recipe = viewModel.recipes[indexPath.row]
+        let recipe = viewModel.recipeInfo(at: indexPath.row)
         cell.update(recipe)
         
         return cell
@@ -72,5 +87,11 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
                 self.tableview.reloadData()
             }
         }
+    }
+    
+    /// 셀이 클릭되었을 때
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 세그웨이 실행! -> 레시피 상세 화면 push 하기
+        performSegue(withIdentifier: segueIdentifier, sender: indexPath.row)
     }
 }

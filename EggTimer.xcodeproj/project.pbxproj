@@ -14,6 +14,7 @@
 		A535360828335198008D865E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A535360728335198008D865E /* Alamofire */; };
 		A535360A2833532D008D865E /* NaverAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53536092833532D008D865E /* NaverAPIKey.swift */; };
 		A535360D28336C12008D865E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360C28336C12008D865E /* String+.swift */; };
+		A535361128337777008D865E /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535361028337777008D865E /* RecipeDetailViewController.swift */; };
 		A569DC3C2832924B009E579B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3B2832924B009E579B /* AppDelegate.swift */; };
 		A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3D2832924B009E579B /* SceneDelegate.swift */; };
 		A569DC432832924B009E579B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A569DC412832924B009E579B /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		A535360428334D22008D865E /* RecipesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesResponseModel.swift; sourceTree = "<group>"; };
 		A53536092833532D008D865E /* NaverAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIKey.swift; sourceTree = "<group>"; };
 		A535360C28336C12008D865E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		A535361028337777008D865E /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		A569DC382832924B009E579B /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A569DC3B2832924B009E579B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A569DC3D2832924B009E579B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,14 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		A53536122833777E008D865E /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A535361028337777008D865E /* RecipeDetailViewController.swift */,
+			);
+			path = RecipeDetail;
+			sourceTree = "<group>";
+		};
 		A569DC2F2832924B009E579B = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 			children = (
 				A5D28078283328E600228011 /* BasicRecipe */,
 				A5D2808128333AB600228011 /* Recipe */,
+				A53536122833777E008D865E /* RecipeDetail */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -362,6 +373,7 @@
 			files = (
 				A569DC3C2832924B009E579B /* AppDelegate.swift in Sources */,
 				A5D2807C28332F2F00228011 /* BasicRecipeCell.swift in Sources */,
+				A535361128337777008D865E /* RecipeDetailViewController.swift in Sources */,
 				A5D28076283328D100228011 /* BasicRecipeViewController.swift in Sources */,
 				A535360A2833532D008D865E /* NaverAPIKey.swift in Sources */,
 				A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */,
