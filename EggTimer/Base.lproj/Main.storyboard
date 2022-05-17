@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OSK-iA-TrH">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,7 +14,7 @@
         <scene sceneID="MRK-xt-tEQ">
             <objects>
                 <navigationController id="p8N-Tj-ClH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="타이머" id="QL6-5R-R6d"/>
+                    <tabBarItem key="tabBarItem" title="타이머" image="alarm" catalog="system" selectedImage="alarm.fill" id="QL6-5R-R6d"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Edr-5h-g2v">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -51,8 +53,8 @@
         <scene sceneID="STe-k0-Nzs">
             <objects>
                 <navigationController id="7kU-wK-zpb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="레시피" id="0vc-J5-Q1b"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FcZ-kW-EYv">
+                    <tabBarItem key="tabBarItem" title="레시피" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="0vc-J5-Q1b"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="FcZ-kW-EYv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -62,7 +64,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBm-Ra-mGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="435"/>
+            <point key="canvasLocation" x="1116" y="475"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZAa-1E-emL">
@@ -71,14 +73,43 @@
                     <view key="view" contentMode="scaleToFill" id="7Sf-wb-gl6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5bQ-65-x6e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="TMw-vk-scu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <connections>
+                                        <segue destination="CYU-3L-ba5" kind="embed" id="7MC-7o-jMo"/>
+                                    </connections>
+                                </containerView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="snw-OF-zYV">
+                                        <rect key="frame" x="0.0" y="244.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="snw-OF-zYV" id="uJt-e9-X7d">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uuC-FU-gXO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="5bQ-65-x6e" secondAttribute="bottom" id="1Bk-pd-b49"/>
+                            <constraint firstItem="5bQ-65-x6e" firstAttribute="leading" secondItem="uuC-FU-gXO" secondAttribute="leading" id="65y-RQ-dFw"/>
+                            <constraint firstItem="uuC-FU-gXO" firstAttribute="trailing" secondItem="5bQ-65-x6e" secondAttribute="trailing" id="ghp-6L-A9G"/>
+                            <constraint firstItem="5bQ-65-x6e" firstAttribute="top" secondItem="7Sf-wb-gl6" secondAttribute="top" id="jox-9K-KYd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kYB-bH-MI6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlK-o7-2UR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="435"/>
+            <point key="canvasLocation" x="1912" y="475"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pFK-G7-ime">
@@ -93,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APy-jU-Lqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693" y="435"/>
+            <point key="canvasLocation" x="1912" y="1148"/>
         </scene>
         <!--설정-->
         <scene sceneID="eJy-IZ-Wye">
@@ -120,6 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="p8N-Tj-ClH" kind="relationship" relationship="viewControllers" id="Yo5-0j-HVy"/>
@@ -130,8 +162,103 @@
             </objects>
             <point key="canvasLocation" x="225" y="96"/>
         </scene>
+        <!--Basic Recipe View Controller-->
+        <scene sceneID="UuZ-br-dN2">
+            <objects>
+                <viewController id="CYU-3L-ba5" customClass="BasicRecipeViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g0b-xY-Zjq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달걀 예쁘게 삶는 방법✨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHz-at-l4Z">
+                                <rect key="frame" x="10" y="10" width="140" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-Pf-DhB">
+                                <rect key="frame" x="0.0" y="37" width="414" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="RIA-vO-9Il"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="pbS-Pl-yhm">
+                                    <size key="itemSize" width="220" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BasicRecipeCell" id="ELv-hH-0kb" customClass="BasicRecipeCell" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="220" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xwK-HM-erI">
+                                            <rect key="frame" x="0.0" y="0.0" width="220" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZLX-UI-T0F">
+                                                    <rect key="frame" x="10" y="10" width="200" height="130"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 상온에 미리 꺼내두기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKS-nS-jyY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="L2H-m2-Spa"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1시간 전에 미리 꺼내서 냉기를 뺀 후 삶아야 깨지지 않게 삶을 수 있어요. 급한 경우 따뜻한 물로 씻어주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOv-GL-460">
+                                                            <rect key="frame" x="0.0" y="40" width="200" height="90"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="AccentColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ZLX-UI-T0F" firstAttribute="leading" secondItem="xwK-HM-erI" secondAttribute="leading" constant="10" id="FUx-OE-toh"/>
+                                                <constraint firstItem="ZLX-UI-T0F" firstAttribute="top" secondItem="xwK-HM-erI" secondAttribute="top" constant="10" id="gSm-G0-hhV"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZLX-UI-T0F" secondAttribute="bottom" constant="10" id="rKp-Nb-15S"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZLX-UI-T0F" secondAttribute="trailing" constant="10" id="uxc-cC-RRb"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="MOv-GL-460" id="R1e-c5-3Zg"/>
+                                            <outlet property="titleLabel" destination="hKS-nS-jyY" id="6D7-YR-U4V"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="CYU-3L-ba5" id="7xJ-6d-zpT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4SN-Pf-DhB" firstAttribute="top" secondItem="oHz-at-l4Z" secondAttribute="bottom" constant="10" id="3eI-C1-Aia"/>
+                            <constraint firstAttribute="trailing" secondItem="4SN-Pf-DhB" secondAttribute="trailing" id="FPr-03-b5e"/>
+                            <constraint firstItem="4SN-Pf-DhB" firstAttribute="leading" secondItem="g0b-xY-Zjq" secondAttribute="leading" id="csk-qC-9kf"/>
+                            <constraint firstItem="oHz-at-l4Z" firstAttribute="top" secondItem="g0b-xY-Zjq" secondAttribute="top" constant="10" id="dn5-BH-9k5"/>
+                            <constraint firstItem="oHz-at-l4Z" firstAttribute="leading" secondItem="g0b-xY-Zjq" secondAttribute="leading" constant="10" id="xzZ-d9-jqO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlJ-rz-J5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2693" y="299"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="alarm" catalog="system" width="124" height="128"/>
+        <image name="alarm.fill" catalog="system" width="124" height="128"/>
+        <image name="book.closed" catalog="system" width="115" height="128"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.60399997234344482" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
