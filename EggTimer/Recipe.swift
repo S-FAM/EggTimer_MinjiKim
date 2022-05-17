@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipes: Decodable {
+struct Recipe: Decodable {
     let title: String       // 제목
     let link: String        // 블로그 링크
     let description: String // 요약 내용
