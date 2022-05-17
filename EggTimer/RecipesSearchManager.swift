@@ -12,7 +12,7 @@ protocol RecipesSearchManagerProtocol {
     func request(
         start: Int,
         display: Int,
-        completionHandler: @escaping ([Recipes]) -> Void
+        completionHandler: @escaping ([Recipe]) -> Void
     )
 }
 
@@ -20,7 +20,7 @@ struct RecipesSearchManager: RecipesSearchManagerProtocol {
     func request(
         start: Int,
         display: Int,
-        completionHandler: @escaping ([Recipes]) -> Void
+        completionHandler: @escaping ([Recipe]) -> Void
     ) {
         guard let url = URL(string: "https://openapi.naver.com/v1/search/blog.json") else { return }
         

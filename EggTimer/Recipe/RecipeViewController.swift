@@ -10,10 +10,17 @@ import UIKit
 final class RecipeViewController: UIViewController {
     private let viewModel = RecipeViewModel()
 
+    @IBOutlet weak var tableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        RecipesSearchManager().request(start: 1, display: 10) { value in
-            print(value)
+        
+        viewModel.requestRecipesList {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                self.tableview.reloadData()
+            }
         }
     }
 }
@@ -25,7 +32,7 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return 10
+        return viewModel.recipes.count
     }
     
     /// 셀 구성
@@ -39,8 +46,31 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
             for: indexPath
         ) as? RecipeCell else { return UITableViewCell() }
         
-        cell.update()
+        let recipe = viewModel.recipes[indexPath.row]
+        cell.update(recipe)
         
         return cell
+    }
+    
+    /// 셀이 보여지려고 할 때
+    func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
+        let currentRow = indexPath.row
+        let currentPage = viewModel.currentPage
+        let display = viewModel.display
+        
+        // 제일 뒤에서 3번째 행이면 다음 페이지 보여주기
+        guard (currentRow % display) == (display - 3) && (currentRow / display) == (currentPage - 1) else { return }
+        
+        viewModel.requestRecipesList {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                self.tableview.reloadData()
+            }
+        }
     }
 }
