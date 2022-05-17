@@ -15,6 +15,8 @@
 		A535360A2833532D008D865E /* NaverAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53536092833532D008D865E /* NaverAPIKey.swift */; };
 		A535360D28336C12008D865E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360C28336C12008D865E /* String+.swift */; };
 		A535361128337777008D865E /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535361028337777008D865E /* RecipeDetailViewController.swift */; };
+		A535361528338ECA008D865E /* HGCircularSlider in Frameworks */ = {isa = PBXBuildFile; productRef = A535361428338ECA008D865E /* HGCircularSlider */; };
+		A535361728339000008D865E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535361628339000008D865E /* TimerViewController.swift */; };
 		A569DC3C2832924B009E579B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3B2832924B009E579B /* AppDelegate.swift */; };
 		A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3D2832924B009E579B /* SceneDelegate.swift */; };
 		A569DC432832924B009E579B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A569DC412832924B009E579B /* Main.storyboard */; };
@@ -55,6 +57,7 @@
 		A53536092833532D008D865E /* NaverAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIKey.swift; sourceTree = "<group>"; };
 		A535360C28336C12008D865E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A535361028337777008D865E /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		A535361628339000008D865E /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A569DC382832924B009E579B /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A569DC3B2832924B009E579B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A569DC3D2832924B009E579B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A535360828335198008D865E /* Alamofire in Frameworks */,
+				A535361528338ECA008D865E /* HGCircularSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +154,14 @@
 			path = RecipeDetail;
 			sourceTree = "<group>";
 		};
+		A535361828339003008D865E /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A535361628339000008D865E /* TimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		A569DC2F2832924B009E579B = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D28078283328E600228011 /* BasicRecipe */,
+				A535361828339003008D865E /* Timer */,
 				A5D2808128333AB600228011 /* Recipe */,
 				A53536122833777E008D865E /* RecipeDetail */,
 			);
@@ -252,6 +265,7 @@
 			name = EggTimer;
 			packageProductDependencies = (
 				A535360728335198008D865E /* Alamofire */,
+				A535361428338ECA008D865E /* HGCircularSlider */,
 			);
 			productName = EggTimer;
 			productReference = A569DC382832924B009E579B /* EggTimer.app */;
@@ -327,6 +341,7 @@
 			mainGroup = A569DC2F2832924B009E579B;
 			packageReferences = (
 				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 			);
 			productRefGroup = A569DC392832924B009E579B /* Products */;
 			projectDirPath = "";
@@ -381,6 +396,7 @@
 				A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */,
 				A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */,
 				A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */,
+				A535361728339000008D865E /* TimerViewController.swift in Sources */,
 				A5D2808028333AB200228011 /* RecipeViewModel.swift in Sources */,
 				A535360D28336C12008D865E /* String+.swift in Sources */,
 				A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */,
@@ -736,6 +752,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HamzaGhazouani/HGCircularSlider";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -743,6 +767,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A535361428338ECA008D865E /* HGCircularSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
+			productName = HGCircularSlider;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
