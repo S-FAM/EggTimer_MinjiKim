@@ -17,12 +17,19 @@ final class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.requestRecipesList {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                
-                self.tableview.reloadData()
+        NetworkCheck.shared.startMonitoring { [weak self] isConnect in
+            guard let self = self else { return }
+
+            if isConnect {
+                self.viewModel.requestRecipesList {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        
+                        self.tableview.reloadData()
+                    }
+                }
+            } else {
+                // 연결안됨 -> 네트워크 연결이 안되었음을 알린다.
             }
         }
     }

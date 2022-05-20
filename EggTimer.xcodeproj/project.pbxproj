@@ -30,6 +30,7 @@
 		A569DC532832924C009E579B /* EggTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC522832924C009E579B /* EggTimerTests.swift */; };
 		A569DC5D2832924C009E579B /* EggTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC5C2832924C009E579B /* EggTimerUITests.swift */; };
 		A569DC5F2832924C009E579B /* EggTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC5E2832924C009E579B /* EggTimerUITestsLaunchTests.swift */; };
+		A5BA6CD12837E50A00EC4722 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6CD02837E50A00EC4722 /* NetworkCheck.swift */; };
 		A5D28076283328D100228011 /* BasicRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D28075283328D100228011 /* BasicRecipeViewController.swift */; };
 		A5D2807C28332F2F00228011 /* BasicRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807B28332F2F00228011 /* BasicRecipeCell.swift */; };
 		A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807D28333A9F00228011 /* RecipeViewController.swift */; };
@@ -84,6 +85,7 @@
 		A569DC582832924C009E579B /* EggTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A569DC5C2832924C009E579B /* EggTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerUITests.swift; sourceTree = "<group>"; };
 		A569DC5E2832924C009E579B /* EggTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A5BA6CD02837E50A00EC4722 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		A5D28075283328D100228011 /* BasicRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicRecipeViewController.swift; sourceTree = "<group>"; };
 		A5D2807B28332F2F00228011 /* BasicRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicRecipeCell.swift; sourceTree = "<group>"; };
 		A5D2807D28333A9F00228011 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +147,6 @@
 				5E6410E47077580723138B44 /* Pods-EggTimerTests.debug.xcconfig */,
 				A2357BD9007D6D94CB70183B /* Pods-EggTimerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -187,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A535360E28336C18008D865E /* Extension */,
+				A5BA6CD22837E50F00EC4722 /* Network */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -272,6 +274,14 @@
 				A569DC5E2832924C009E579B /* EggTimerUITestsLaunchTests.swift */,
 			);
 			path = EggTimerUITests;
+			sourceTree = "<group>";
+		};
+		A5BA6CD22837E50F00EC4722 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A5BA6CD02837E50A00EC4722 /* NetworkCheck.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		A5D28077283328D600228011 /* Scene */ = {
@@ -403,7 +413,7 @@
 			);
 			mainGroup = A569DC2F2832924B009E579B;
 			packageReferences = (
-				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 			);
 			productRefGroup = A569DC392832924B009E579B /* Products */;
@@ -568,6 +578,7 @@
 				A5D2808028333AB200228011 /* RecipeViewModel.swift in Sources */,
 				A535361D2833AB05008D865E /* EggsCell.swift in Sources */,
 				A535360D28336C12008D865E /* String+.swift in Sources */,
+				A5BA6CD12837E50A00EC4722 /* NetworkCheck.swift in Sources */,
 				A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */,
 				A535360528334D22008D865E /* RecipesResponseModel.swift in Sources */,
 			);
@@ -675,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -729,7 +740,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -919,7 +930,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -940,7 +951,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		A535360728335198008D865E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		A535361428338ECA008D865E /* HGCircularSlider */ = {
