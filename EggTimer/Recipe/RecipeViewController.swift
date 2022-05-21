@@ -69,8 +69,6 @@ final class RecipeViewController: UIViewController {
                     
                     self.indicator.isHidden = true
                     self.networkLabel.isHidden = false
-                    self.viewModel.recipes = []
-                    self.tableview.reloadData()
                 }
             }
         }

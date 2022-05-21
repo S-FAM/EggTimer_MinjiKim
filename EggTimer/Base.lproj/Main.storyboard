@@ -220,8 +220,9 @@
                                     <outlet property="delegate" destination="Agy-mJ-GOV" id="aoC-8Q-gRf"/>
                                 </connections>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네트워크 연결을 확인해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoW-s9-5DA">
-                                <rect key="frame" x="104.5" y="238" width="205" height="575"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네트워크 연결을 확인해주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoW-s9-5DA">
+                                <rect key="frame" x="0.0" y="238" width="414" height="575"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -237,6 +238,8 @@
                             <constraint firstItem="uuC-FU-gXO" firstAttribute="trailing" secondItem="5bQ-65-x6e" secondAttribute="trailing" id="ghp-6L-A9G"/>
                             <constraint firstItem="XoW-s9-5DA" firstAttribute="top" secondItem="uuC-FU-gXO" secondAttribute="top" constant="150" id="iIX-m3-haK"/>
                             <constraint firstItem="5bQ-65-x6e" firstAttribute="top" secondItem="7Sf-wb-gl6" secondAttribute="top" id="jox-9K-KYd"/>
+                            <constraint firstItem="XoW-s9-5DA" firstAttribute="leading" secondItem="5bQ-65-x6e" secondAttribute="leading" id="uid-y7-B0m"/>
+                            <constraint firstItem="XoW-s9-5DA" firstAttribute="trailing" secondItem="5bQ-65-x6e" secondAttribute="trailing" id="z0C-YE-rnQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="삶은 달걀 레시피" id="kYB-bH-MI6"/>
@@ -260,24 +263,36 @@
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-Kh-ryN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="네트워크 연결을 확인해주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kc-yQ-xa6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CIs-eA-oqE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8Kc-yQ-xa6" firstAttribute="trailing" secondItem="mNe-Kh-ryN" secondAttribute="trailing" id="1x9-2x-vHn"/>
                             <constraint firstItem="mNe-Kh-ryN" firstAttribute="top" secondItem="CIs-eA-oqE" secondAttribute="top" id="2U8-ka-mXZ"/>
                             <constraint firstItem="mNe-Kh-ryN" firstAttribute="leading" secondItem="CIs-eA-oqE" secondAttribute="leading" id="EOG-Ji-Ydq"/>
                             <constraint firstItem="CIs-eA-oqE" firstAttribute="bottom" secondItem="mNe-Kh-ryN" secondAttribute="bottom" id="Foj-ku-S8v"/>
+                            <constraint firstItem="8Kc-yQ-xa6" firstAttribute="bottom" secondItem="mNe-Kh-ryN" secondAttribute="bottom" id="Gru-Db-ibf"/>
+                            <constraint firstItem="8Kc-yQ-xa6" firstAttribute="leading" secondItem="mNe-Kh-ryN" secondAttribute="leading" id="SG5-aJ-6C6"/>
+                            <constraint firstItem="8Kc-yQ-xa6" firstAttribute="top" secondItem="mNe-Kh-ryN" secondAttribute="top" id="TXg-DE-dgB"/>
                             <constraint firstItem="CIs-eA-oqE" firstAttribute="trailing" secondItem="mNe-Kh-ryN" secondAttribute="trailing" id="tRX-o4-VDU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YQ7-k0-WJL"/>
                     <connections>
+                        <outlet property="networkLabel" destination="8Kc-yQ-xa6" id="RyS-Jd-eyu"/>
                         <outlet property="webView" destination="mNe-Kh-ryN" id="ZtH-ap-T9D"/>
                     </connections>
                 </viewController>
