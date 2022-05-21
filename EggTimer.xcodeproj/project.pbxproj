@@ -22,6 +22,7 @@
 		A535361A2833AA97008D865E /* EggsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53536192833AA97008D865E /* EggsViewController.swift */; };
 		A535361D2833AB05008D865E /* EggsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535361C2833AB05008D865E /* EggsCell.swift */; };
 		A53536212833B2F3008D865E /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53536202833B2F3008D865E /* TimerViewModel.swift */; };
+		A5574488283920D200C5841C /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = A5574487283920D200C5841C /* NVActivityIndicatorView */; };
 		A569DC3C2832924B009E579B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3B2832924B009E579B /* AppDelegate.swift */; };
 		A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC3D2832924B009E579B /* SceneDelegate.swift */; };
 		A569DC432832924B009E579B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A569DC412832924B009E579B /* Main.storyboard */; };
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5574488283920D200C5841C /* NVActivityIndicatorView in Frameworks */,
 				A535360828335198008D865E /* Alamofire in Frameworks */,
 				A535361528338ECA008D865E /* HGCircularSlider in Frameworks */,
 				592AFB6FBAFD4C11E786EEE1 /* Pods_EggTimer.framework in Frameworks */,
@@ -336,6 +338,7 @@
 			packageProductDependencies = (
 				A535360728335198008D865E /* Alamofire */,
 				A535361428338ECA008D865E /* HGCircularSlider */,
+				A5574487283920D200C5841C /* NVActivityIndicatorView */,
 			);
 			productName = EggTimer;
 			productReference = A569DC382832924B009E579B /* EggTimer.app */;
@@ -415,6 +418,7 @@
 			packageReferences = (
 				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
+				A5574486283920D200C5841C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = A569DC392832924B009E579B /* Products */;
 			projectDirPath = "";
@@ -946,6 +950,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		A5574486283920D200C5841C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -958,6 +970,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */;
 			productName = HGCircularSlider;
+		};
+		A5574487283920D200C5841C /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5574486283920D200C5841C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

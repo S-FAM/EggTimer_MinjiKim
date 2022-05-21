@@ -5,6 +5,7 @@
 //  Created by 김민지 on 2022/05/17.
 //  레시피 화면 뷰 컨트롤러
 
+import NVActivityIndicatorView
 import UIKit
 
 final class RecipeViewController: UIViewController {
@@ -14,24 +15,26 @@ final class RecipeViewController: UIViewController {
     private let segueIdentifier = "pushToRecipeDetail"
 
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var networkLabel: UILabel!
+    
+    private lazy var indicator = NVActivityIndicatorView(
+        frame: CGRect(
+            x: (view.bounds.width / 2) - 15,
+            y: (view.bounds.height / 2) + 65 ,
+            width: 30,
+            height: 30
+        ),
+        type: .ballPulseSync,
+        color: .systemGray,
+        padding: 0
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkCheck.shared.startMonitoring { [weak self] isConnect in
-            guard let self = self else { return }
+        view.addSubview(indicator)
 
-            if isConnect {
-                self.viewModel.requestRecipesList {
-                    DispatchQueue.main.async { [weak self] in
-                        guard let self = self else { return }
-                        
-                        self.tableview.reloadData()
-                    }
-                }
-            } else {
-                // 연결안됨 -> 네트워크 연결이 안되었음을 알린다.
-            }
-        }
+        indicator.startAnimating()
+        checkNetwork()
     }
     
     // 세그웨이 실행되면 선택된 레시피를 상세화면으로 넘겨주면서 push 하기
@@ -42,6 +45,33 @@ final class RecipeViewController: UIViewController {
             if let row = sender as? Int {
                 let recipe = viewModel.recipeInfo(at: row)
                 vc?.recipe = recipe
+            }
+        }
+    }
+    
+    func checkNetwork() {
+        NetworkCheck.shared.startMonitoring { [weak self] isConnect in
+            guard let self = self else { return }
+
+            if isConnect {
+                self.viewModel.requestRecipesList {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        
+                        self.indicator.isHidden = true
+                        self.networkLabel.isHidden = true
+                        self.tableview.reloadData()
+                    }
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    self.indicator.isHidden = true
+                    self.networkLabel.isHidden = false
+                    self.viewModel.recipes = []
+                    self.tableview.reloadData()
+                }
             }
         }
     }
