@@ -6,6 +6,7 @@
 //  타이머 화면 뷰 컨트롤러
 
 import HGCircularSlider
+import PanModal
 import UIKit
 import WaterDrops
 
@@ -59,7 +60,13 @@ final class TimerViewController: UIViewController {
             object: nil
         )
     }
-
+    
+    @IBAction func didTappedEggButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let eggViewController = storyboard.instantiateViewController(withIdentifier: EggsViewController.identifier) as! EggsViewController
+        presentPanModal(eggViewController)
+    }
+    
     @IBAction func didTappedStartButton(_ sender: UIButton) {
         switch viewModel.timerStatus {
         case .end:
