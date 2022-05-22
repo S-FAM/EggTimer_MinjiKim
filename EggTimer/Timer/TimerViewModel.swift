@@ -37,11 +37,7 @@ final class TimerViewModel {
                 self.min = self.currentSec / 60
                 self.sec = self.currentSec % 60
                 
-                // 타이머 라벨 업데이트하기
-                print("타이머 라벨은..", String(format: "%02d:%02d", self.min, self.sec))
-                // 슬라이드 값 업데이트하기
-                print("슬라이드 값은..", self.currentSec)
-                // 보글보글 효과 주기
+                NotificationCenter.default.post(name: NSNotification.Name("updateTimerUI"), object: [self.currentSec, self.min, self.sec])
                 
                 if self.currentSec <= 0 {
                     // 타이머 멈추기
