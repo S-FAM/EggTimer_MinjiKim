@@ -45,6 +45,7 @@
                                             <constraint firstAttribute="width" secondItem="aVN-1c-lEv" secondAttribute="height" multiplier="15:8" id="QSn-6w-zrK"/>
                                             <constraint firstAttribute="width" constant="240" id="cT5-oL-XpV"/>
                                         </constraints>
+                                        <color key="tintColor" name="AccentColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="egg_empty"/>
                                         <connections>
@@ -102,7 +103,7 @@
                                             <action selector="didTappedCancelButton:" destination="ecq-mc-Fez" eventType="touchUpInside" id="9hL-v1-JoA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pup-r9-8aI">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pup-r9-8aI">
                                         <rect key="frame" x="304" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
