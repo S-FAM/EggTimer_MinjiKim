@@ -49,7 +49,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7e-Yb-eXS">
                                         <rect key="frame" x="88" y="197" width="178" height="72"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -100,11 +100,17 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Rj0-7e-oSE"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" title="Button"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="시작"/>
+                                        <state key="selected" title="일시정지"/>
                                         <buttonConfiguration key="configuration" style="plain" title="시작">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedStartButton:" destination="ecq-mc-Fez" eventType="touchUpInside" id="YqT-4J-XD8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

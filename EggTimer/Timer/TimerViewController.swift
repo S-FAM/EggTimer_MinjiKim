@@ -19,6 +19,19 @@ final class TimerViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
+    private lazy var waterDropsView = WaterDropsView(
+        frame: timeLabel.frame,
+        direction: .up,
+        dropNum: 10,
+        color: .white,
+        minDropSize: 10,
+        maxDropSize: 20,
+        minLength: 50,
+        maxLength: 100,
+        minDuration: 4,
+        maxDuration: 8
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         [cancelButton, startButton].forEach {
@@ -34,23 +47,11 @@ final class TimerViewController: UIViewController {
 //        circularSlider.startPointValue = 1 * 60 * 60
 //        circularSlider.endPointValue = 8 * 60 * 60
 //        circularSlider.numberOfRounds = 2 // Two rotations for full 24h range
-        
-        // 보글보글 효과
-        let waterDropsView = WaterDropsView(
-            frame: timeLabel.frame,
-            direction: .up,
-            dropNum: 10,
-            color: .white,
-            minDropSize: 10,
-            maxDropSize: 20,
-            minLength: 50,
-            maxLength: 100,
-            minDuration: 4,
-            maxDuration: 8
-        )
+
         
         // add animation
         waterDropsView.addAnimation()
+        waterDropsView.isHidden = true
         view.addSubview(waterDropsView)
         
         NotificationCenter.default.addObserver(
@@ -60,6 +61,29 @@ final class TimerViewController: UIViewController {
             object: nil
         )
     }
+
+    @IBAction func didTappedStartButton(_ sender: UIButton) {
+        switch viewModel.timerStatus {
+        case .end:
+            // 슬라이드 애니메이션 시작
+            viewModel.timerStatus = .start
+            waterDropsView.isHidden = false
+            startButton.setTitle("일시정지", for: .normal)
+            viewModel.startTimer()
+        case .start:
+            // 시작 중에 누른 거면 -> 일시정지
+            viewModel.timerStatus = .pause
+            waterDropsView.isHidden = true
+            startButton.setTitle("일시정지", for: .normal)
+            viewModel.timer?.suspend()
+        case .pause:
+            // 일시정지 중에 누른 거면 ->  시작
+            viewModel.timerStatus = .start
+            waterDropsView.isHidden = false
+            startButton.setTitle("시작", for: .normal)
+            viewModel.timer?.resume()
+        }
+    }
 }
 
 // MARK: - @objc Function
@@ -67,9 +91,11 @@ extension TimerViewController {
     /// 선택한 달걀 이미지와 타이머 시간 설정하기
     @objc func setTimer(_ notification: Notification) {
         guard let image = notification.object as? String else { return }
-        let time = String(Array(image).suffix(from: 3))
+        
+        let time = Int(String(Array(image).suffix(from: 3)))
+        viewModel.setTime(time!)
         
         eggImageView.image = UIImage(named: image)
-        timeLabel.text = time.count < 2 ? "0\(time):00" : "\(time):00"
+        timeLabel.text = String(format: "%02d:%02d", viewModel.min, viewModel.sec)
     }
 }
