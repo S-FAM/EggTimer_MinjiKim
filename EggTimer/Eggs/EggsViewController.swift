@@ -5,13 +5,25 @@
 //  Created by 김민지 on 2022/05/17.
 //  타이머로 선택할 달걀을 보여줄 화면 뷰 컨트롤러
 
+import PanModal
 import UIKit
 
 final class EggsViewController: UIViewController {
+    static let identifier = "EggsViewController"
+    
+    @IBOutlet weak var collectionview: UICollectionView!
+    
     private let images: [String] = ["egg5", "egg6", "egg7", "egg8", "egg9", "egg10"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+// MARK: - Panmodal
+extension EggsViewController: PanModalPresentable {
+    var panScrollable: UIScrollView? {
+        return collectionview
     }
 }
 
@@ -42,5 +54,6 @@ extension EggsViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: NSNotification.Name("selectedEgg"), object: images[indexPath.row])
+        dismiss(animated: true)
     }
 }

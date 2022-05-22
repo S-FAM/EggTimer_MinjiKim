@@ -32,6 +32,7 @@
 		A569DC5D2832924C009E579B /* EggTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC5C2832924C009E579B /* EggTimerUITests.swift */; };
 		A569DC5F2832924C009E579B /* EggTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A569DC5E2832924C009E579B /* EggTimerUITestsLaunchTests.swift */; };
 		A5BA6CD12837E50A00EC4722 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6CD02837E50A00EC4722 /* NetworkCheck.swift */; };
+		A5C721BF283A4DED00A6AD42 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = A5C721BE283A4DED00A6AD42 /* PanModal */; };
 		A5D28076283328D100228011 /* BasicRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D28075283328D100228011 /* BasicRecipeViewController.swift */; };
 		A5D2807C28332F2F00228011 /* BasicRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807B28332F2F00228011 /* BasicRecipeCell.swift */; };
 		A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807D28333A9F00228011 /* RecipeViewController.swift */; };
@@ -107,6 +108,7 @@
 				A535360828335198008D865E /* Alamofire in Frameworks */,
 				A535361528338ECA008D865E /* HGCircularSlider in Frameworks */,
 				592AFB6FBAFD4C11E786EEE1 /* Pods_EggTimer.framework in Frameworks */,
+				A5C721BF283A4DED00A6AD42 /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +341,7 @@
 				A535360728335198008D865E /* Alamofire */,
 				A535361428338ECA008D865E /* HGCircularSlider */,
 				A5574487283920D200C5841C /* NVActivityIndicatorView */,
+				A5C721BE283A4DED00A6AD42 /* PanModal */,
 			);
 			productName = EggTimer;
 			productReference = A569DC382832924B009E579B /* EggTimer.app */;
@@ -419,6 +422,7 @@
 				A535360628335198008D865E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A535361328338ECA008D865E /* XCRemoteSwiftPackageReference "HGCircularSlider" */,
 				A5574486283920D200C5841C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				A5C721BD283A4DED00A6AD42 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = A569DC392832924B009E579B /* Products */;
 			projectDirPath = "";
@@ -958,6 +962,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A5C721BD283A4DED00A6AD42 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -975,6 +987,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5574486283920D200C5841C /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		A5C721BE283A4DED00A6AD42 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5C721BD283A4DED00A6AD42 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
