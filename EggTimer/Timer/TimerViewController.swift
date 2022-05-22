@@ -13,13 +13,13 @@ final class TimerViewController: UIViewController {
     private let viewModel = TimerViewModel()
 
     @IBOutlet weak var circularSlider: CircularSlider!
-    @IBOutlet weak var eggImageView: UIImageView!
+    @IBOutlet weak var eggButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
     private lazy var waterDropsView = WaterDropsView(
-        frame: eggImageView.frame,
+        frame: eggButton.frame,
         direction: .up,
         dropNum: 10,
         color: .white,
@@ -88,7 +88,7 @@ final class TimerViewController: UIViewController {
             startButton.setTitle("시작", for: .normal)
             waterDropsView.isHidden = true
             
-            eggImageView.image = UIImage(named: "egg_empty")
+            eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
             timeLabel.text = "00:00"
             circularSlider.maximumValue = 0.0
             circularSlider.endPointValue = 0.0
@@ -113,7 +113,7 @@ extension TimerViewController {
         circularSlider.maximumValue = CGFloat(time! * 60)
         circularSlider.endPointValue = CGFloat(time! * 60)
         
-        eggImageView.image = UIImage(named: image)
+        eggButton.setImage(UIImage(named: image), for: .normal)
         timeLabel.text = String(format: "%02d:%02d", viewModel.min, viewModel.sec)
     }
     

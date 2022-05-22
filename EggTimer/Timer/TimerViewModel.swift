@@ -5,6 +5,7 @@
 //  Created by 김민지 on 2022/05/17.
 //  타이머 화면 뷰 모델
 
+import AudioToolbox
 import Foundation
 
 enum TimerStatus {
@@ -41,7 +42,7 @@ final class TimerViewModel {
                 
                 if self.currentSec <= 0 {
                     self.stopTimer()
-                    // 알림음 내기
+                    AudioServicesPlaySystemSound(1005)
                 }
             })
             timer?.resume()
