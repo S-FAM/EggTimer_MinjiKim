@@ -43,6 +43,7 @@ final class TimerViewModel {
                 if self.currentSec <= 0 {
                     self.stopTimer()
                     AudioServicesPlaySystemSound(1005)
+                    NotificationCenter.default.post(name: NSNotification.Name("endTimer"), object: nil)
                 }
             })
             timer?.resume()

@@ -59,6 +59,13 @@ final class TimerViewController: UIViewController {
             name: NSNotification.Name("updateTimerUI"),
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(endTimer(_:)),
+            name: NSNotification.Name("endTimer"),
+            object: nil
+        )
     }
     
     @IBAction func didTappedEggButton(_ sender: UIButton) {
@@ -72,6 +79,7 @@ final class TimerViewController: UIViewController {
         case .end:
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
+            eggButton.isEnabled = false
             cancelButton.isEnabled = true
             startButton.setTitle("일시정지", for: .normal)
             viewModel.startTimer()
@@ -83,6 +91,7 @@ final class TimerViewController: UIViewController {
         case .pause:
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
+            eggButton.isEnabled = false
             startButton.setTitle("일시정지", for: .normal)
             viewModel.timer?.resume()
         }
@@ -91,15 +100,18 @@ final class TimerViewController: UIViewController {
     @IBAction func didTappedCancelButton(_ sender: UIButton) {
         switch viewModel.timerStatus {
         case .start, .pause:
-            cancelButton.isEnabled = false
-            startButton.setTitle("시작", for: .normal)
-            waterDropsView.isHidden = true
-            
+            eggButton.isEnabled = true
             eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
             timeLabel.text = "00:00"
+            
             circularSlider.maximumValue = 0.0
             circularSlider.endPointValue = 0.0
-
+            
+            waterDropsView.isHidden = true
+            cancelButton.isEnabled = false
+            startButton.isEnabled = false
+            startButton.setTitle("시작", for: .normal)
+            
             viewModel.stopTimer()
         default:
             break
@@ -122,6 +134,7 @@ extension TimerViewController {
         
         eggButton.setImage(UIImage(named: image), for: .normal)
         timeLabel.text = String(format: "%02d:%02d", viewModel.min, viewModel.sec)
+        startButton.isEnabled = true
     }
     
     /// 타이머가 실행됨에 따라 UI 업데이트하기
@@ -134,5 +147,11 @@ extension TimerViewController {
 
         circularSlider.endPointValue = CGFloat(currentSec)
         timeLabel.text = String(format: "%02d:%02d", min, sec)
+    }
+    
+    @objc func endTimer(_ notification: Notification) {
+        eggButton.isEnabled = true
+        eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
+        waterDropsView.isHidden = true
     }
 }
