@@ -11,7 +11,6 @@ import WaterDrops
 
 final class TimerViewController: UIViewController {
     private let viewModel = TimerViewModel()
-    // TODO: 기본 타이머는 5분으로 초기화 해둘것!
 
     @IBOutlet weak var circularSlider: CircularSlider!
     @IBOutlet weak var eggImageView: UIImageView!
@@ -39,8 +38,8 @@ final class TimerViewController: UIViewController {
         }
         
         circularSlider.minimumValue = 0.0
-        circularSlider.maximumValue = 300.0
-        circularSlider.endPointValue = 300.0
+        circularSlider.maximumValue = 0.0
+        circularSlider.endPointValue = 0.0
 
         waterDropsView.addAnimation()
         waterDropsView.isHidden = true
@@ -64,23 +63,39 @@ final class TimerViewController: UIViewController {
     @IBAction func didTappedStartButton(_ sender: UIButton) {
         switch viewModel.timerStatus {
         case .end:
-            // 슬라이드 애니메이션 시작
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
+            cancelButton.isEnabled = true
             startButton.setTitle("일시정지", for: .normal)
             viewModel.startTimer()
         case .start:
-            // 시작 중에 누른 거면 -> 일시정지
             viewModel.timerStatus = .pause
             waterDropsView.isHidden = true
             startButton.setTitle("시작", for: .normal)
             viewModel.timer?.suspend()
         case .pause:
-            // 일시정지 중에 누른 거면 ->  시작
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
             startButton.setTitle("일시정지", for: .normal)
             viewModel.timer?.resume()
+        }
+    }
+    
+    @IBAction func didTappedCancelButton(_ sender: UIButton) {
+        switch viewModel.timerStatus {
+        case .start, .pause:
+            cancelButton.isEnabled = false
+            startButton.setTitle("시작", for: .normal)
+            waterDropsView.isHidden = true
+            
+            eggImageView.image = UIImage(named: "egg_empty")
+            timeLabel.text = "00:00"
+            circularSlider.maximumValue = 0.0
+            circularSlider.endPointValue = 0.0
+
+            viewModel.stopTimer()
+        default:
+            break
         }
     }
 }
@@ -92,7 +107,9 @@ extension TimerViewController {
         guard let image = notification.object as? String else { return }
         
         let time = Int(String(Array(image).suffix(from: 3)))
-        viewModel.setTime(time!)
+        viewModel.selectedTime = time!
+        viewModel.setTime()
+        
         circularSlider.maximumValue = CGFloat(time! * 60)
         circularSlider.endPointValue = CGFloat(time! * 60)
         

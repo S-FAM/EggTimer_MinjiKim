@@ -39,15 +39,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mg9-oO-s24" customClass="CircularSlider" customModule="HGCircularSlider">
                                 <rect key="frame" x="30" y="88" width="354" height="354"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg5" translatesAutoresizingMaskIntoConstraints="NO" id="TeQ-Dw-2Lj">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg_empty" translatesAutoresizingMaskIntoConstraints="NO" id="TeQ-Dw-2Lj">
                                         <rect key="frame" x="57" y="50" width="240" height="127"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TeQ-Dw-2Lj" secondAttribute="height" multiplier="15:8" constant="2" id="EwO-WG-jw9"/>
                                             <constraint firstAttribute="width" constant="240" id="K7D-rr-Srm"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7e-Yb-eXS">
-                                        <rect key="frame" x="88" y="197" width="178" height="72"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7e-Yb-eXS">
+                                        <rect key="frame" x="87" y="197" width="180.5" height="72"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="a1T-Fa-IBw">
                                 <rect key="frame" x="20" y="422" width="374" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-4T-9o6">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-4T-9o6">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
@@ -93,6 +93,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="취소">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTappedCancelButton:" destination="ecq-mc-Fez" eventType="touchUpInside" id="9hL-v1-JoA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pup-r9-8aI">
                                         <rect key="frame" x="304" y="0.0" width="70" height="70"/>
@@ -527,6 +530,7 @@
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="egg5" width="76" height="91"/>
+        <image name="egg_empty" width="76" height="91"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.60399997234344482" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

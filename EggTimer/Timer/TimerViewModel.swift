@@ -12,16 +12,16 @@ enum TimerStatus {
 }
 
 final class TimerViewModel {
-    var duration = 300
     var timerStatus: TimerStatus = .end
     var timer: DispatchSourceTimer?
+    var selectedTime: Int = 0
     
-    var currentSec: Int = 300
+    var currentSec: Int = 0
     var min: Int = 0
     var sec: Int = 0
     
-    func setTime(_ time: Int) {
-        currentSec = time * 60
+    func setTime() {
+        currentSec = selectedTime * 60
         min = currentSec / 60
         sec = currentSec % 60
     }
@@ -40,11 +40,20 @@ final class TimerViewModel {
                 NotificationCenter.default.post(name: NSNotification.Name("updateTimerUI"), object: [self.currentSec, self.min, self.sec])
                 
                 if self.currentSec <= 0 {
-                    // 타이머 멈추기
+                    self.stopTimer()
                     // 알림음 내기
                 }
             })
             timer?.resume()
         }
+    }
+    
+    func stopTimer() {
+        if timerStatus == .pause {
+            timer?.resume()
+        }
+        timerStatus = .end
+        timer?.cancel()
+        timer = nil
     }
 }
