@@ -38,7 +38,7 @@ final class TimerViewModel {
                 self.min = self.currentSec / 60
                 self.sec = self.currentSec % 60
                 
-                NotificationCenter.default.post(name: NSNotification.Name("updateTimerUI"), object: [self.currentSec, self.min, self.sec])
+                NotificationCenter.default.post(name: NSNotification.Name("updateTimerUI"), object: (self.currentSec, self.min, self.sec))
                 
                 if self.currentSec <= 0 {
                     self.stopTimer()

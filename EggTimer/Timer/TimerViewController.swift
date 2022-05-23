@@ -20,17 +20,20 @@ final class TimerViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     private lazy var waterDropsView = WaterDropsView(
-        frame: eggButton.frame,
+        frame: timeLabel.frame,
         direction: .up,
         dropNum: 10,
-        color: .white,
+        color: .blue,
         minDropSize: 10,
         maxDropSize: 20,
         minLength: 50,
         maxLength: 100,
         minDuration: 4,
-        maxDuration: 8
+        maxDuration: 8  // TODO: 선택한 초로
     )
+    
+    // TODO: Circle이 FirstResponder를 받지 않도록
+    // TODO: 시작할 때 흰달걀 이미지 넣고 상태별로 서서히 변하기
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,14 +72,14 @@ final class TimerViewController: UIViewController {
     }
     
     @IBAction func didTappedEggButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let eggViewController = storyboard.instantiateViewController(withIdentifier: EggsViewController.identifier) as! EggsViewController
+        let eggViewController = storyboard?.instantiateViewController(withIdentifier: EggsViewController.identifier) as! EggsViewController
         presentPanModal(eggViewController)
     }
     
     @IBAction func didTappedStartButton(_ sender: UIButton) {
         switch viewModel.timerStatus {
         case .end:
+            // TODO: 함수로 묶어버리기
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
             eggButton.isEnabled = false
@@ -125,7 +128,7 @@ extension TimerViewController {
     @objc func setTimer(_ notification: Notification) {
         guard let image = notification.object as? String else { return }
         
-        let time = Int(String(Array(image).suffix(from: 3)))
+        let time = Int(String(Array(image).suffix(from: 3)))    // TODO: Component로 자르기(숫자만)
         viewModel.selectedTime = time!
         viewModel.setTime()
         
@@ -139,11 +142,13 @@ extension TimerViewController {
     
     /// 타이머가 실행됨에 따라 UI 업데이트하기
     @objc func updateTimerUI(_ notification: Notification) {
-        guard let data = notification.object as? [Int] else { return }
+        guard let data = notification.object
+                as? (current: Int, minute: Int, second: Int) else { return }
+        // 튜플 네이밍으로 더 알아보기 쉽게.
         
-        let currentSec = data[0]
-        let min = data[1]
-        let sec = data[2]
+        let currentSec = data.current
+        let min = data.minute
+        let sec = data.second
 
         circularSlider.endPointValue = CGFloat(currentSec)
         timeLabel.text = String(format: "%02d:%02d", min, sec)

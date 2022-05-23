@@ -55,18 +55,14 @@ final class RecipeViewController: UIViewController {
 
             if isConnect {
                 self.viewModel.requestRecipesList {
-                    DispatchQueue.main.async { [weak self] in
-                        guard let self = self else { return }
-                        
+                    DispatchQueue.main.async {
                         self.indicator.isHidden = true
-                        self.networkLabel.isHidden = true
+                        self.networkLabel.isHidden = true   // TODO: 함수로 바꿔보기(isConnect 파라미터로 받기)
                         self.tableview.reloadData()
                     }
                 }
             } else {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    
+                DispatchQueue.main.async {
                     self.indicator.isHidden = true
                     self.networkLabel.isHidden = false
                 }
