@@ -21,7 +21,12 @@ final class TimerViewController: UIViewController {
     
     /// Length: 범위, Duration: 속도
     private lazy var waterDropsView = WaterDropsView(
-        frame: timeLabel.frame,
+        frame: CGRect(
+            x: eggButton.frame.minX,
+            y: eggButton.frame.maxY,
+            width: eggButton.bounds.width,
+            height: eggButton.bounds.height
+        ),
         direction: .up,
         dropNum: 10,
         color: .white,
@@ -51,8 +56,6 @@ final class TimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // 화면이 보여질 때마다 애니메이션 실행!
-        // TODO: 다만, 백그라운드 -> 포그라운드로 오면 waterDrop 효과가 보이지 않음..!
         waterDropsView.addAnimation()
     }
     
@@ -75,6 +78,13 @@ final class TimerViewController: UIViewController {
             self,
             selector: #selector(endTimer(_:)),
             name: NSNotification.Name("endTimer"),
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reloadView(_:)),
+            name: UIApplication.willEnterForegroundNotification,
             object: nil
         )
     }
@@ -166,5 +176,9 @@ extension TimerViewController {
         eggButton.isEnabled = true
         eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
         waterDropsView.isHidden = true
+    }
+    
+    @objc func reloadView(_ notification: Notification) {
+        viewWillAppear(true)
     }
 }
