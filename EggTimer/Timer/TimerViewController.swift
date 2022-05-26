@@ -19,20 +19,24 @@ final class TimerViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
+    /// Length: 범위, Duration: 속도
     private lazy var waterDropsView = WaterDropsView(
-        frame: timeLabel.frame,
+        frame: CGRect(
+            x: eggButton.frame.minX,
+            y: eggButton.frame.maxY,
+            width: eggButton.bounds.width,
+            height: eggButton.bounds.height
+        ),
         direction: .up,
         dropNum: 10,
-        color: .blue,
+        color: .white,
         minDropSize: 10,
         maxDropSize: 20,
         minLength: 50,
-        maxLength: 100,
+        maxLength: eggButton.bounds.height,
         minDuration: 4,
-        maxDuration: 8  // TODO: 선택한 초로
+        maxDuration: 8
     )
-    
-    // TODO: Circle이 FirstResponder를 받지 않도록
     // TODO: 시작할 때 흰달걀 이미지 넣고 상태별로 서서히 변하기
     
     override func viewDidLoad() {
@@ -45,10 +49,17 @@ final class TimerViewController: UIViewController {
         circularSlider.maximumValue = 0.0
         circularSlider.endPointValue = 0.0
 
-        waterDropsView.addAnimation()
         waterDropsView.isHidden = true
         view.addSubview(waterDropsView)
         
+        setupNoti()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        waterDropsView.addAnimation()
+    }
+    
+    func setupNoti() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(setTimer(_:)),
@@ -67,6 +78,13 @@ final class TimerViewController: UIViewController {
             self,
             selector: #selector(endTimer(_:)),
             name: NSNotification.Name("endTimer"),
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reloadView(_:)),
+            name: UIApplication.willEnterForegroundNotification,
             object: nil
         )
     }
@@ -128,7 +146,7 @@ extension TimerViewController {
     @objc func setTimer(_ notification: Notification) {
         guard let image = notification.object as? String else { return }
         
-        let time = Int(String(Array(image).suffix(from: 3)))    // TODO: Component로 자르기(숫자만)
+        let time = Int(image.components(separatedBy: "egg").last!)
         viewModel.selectedTime = time!
         viewModel.setTime()
         
@@ -158,5 +176,9 @@ extension TimerViewController {
         eggButton.isEnabled = true
         eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
         waterDropsView.isHidden = true
+    }
+    
+    @objc func reloadView(_ notification: Notification) {
+        viewWillAppear(true)
     }
 }
