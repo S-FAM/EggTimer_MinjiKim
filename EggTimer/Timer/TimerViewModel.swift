@@ -12,38 +12,38 @@ enum TimerStatus {
     case start, pause, end
 }
 
+// TODO: NotificationCenter를 Protocol로 바꿔보기!
+
 final class TimerViewModel {
     var timerStatus: TimerStatus = .end
     var timer: DispatchSourceTimer?
     var selectedTime: Int = 0
     
-    var currentSec: Int = 0
+    var currentSec: Double = 0.0
     var min: Int = 0
     var sec: Int = 0
-    
-    func setTime() {
-        currentSec = selectedTime * 60
-        min = currentSec / 60
-        sec = currentSec % 60
-    }
     
     func startTimer() {
         if timer == nil {
             timer = DispatchSource.makeTimerSource(flags: [], queue: .main)
-            timer?.schedule(deadline: .now(), repeating: 1)
+            timer?.schedule(deadline: .now(), repeating: 0.01)
             timer?.setEventHandler(handler: { [weak self] in
                 guard let self = self else { return }
-                
-                self.currentSec -= 1
-                self.min = self.currentSec / 60
-                self.sec = self.currentSec % 60
-                
-                NotificationCenter.default.post(name: NSNotification.Name("updateTimerUI"), object: (self.currentSec, self.min, self.sec))
-                
+
+                self.currentSec -= 0.01
+
+                NotificationCenter.default.post(
+                    name: NSNotification.Name("updateTimerUI"),
+                    object: (nil)
+                )
+
                 if self.currentSec <= 0 {
                     self.stopTimer()
                     AudioServicesPlaySystemSound(1005)
-                    NotificationCenter.default.post(name: NSNotification.Name("endTimer"), object: nil)
+                    NotificationCenter.default.post(
+                        name: NSNotification.Name("endTimer"),
+                        object: nil
+                    )
                 }
             })
             timer?.resume()
@@ -51,6 +51,10 @@ final class TimerViewModel {
     }
     
     func stopTimer() {
+        NotificationCenter.default.post(
+            name: NSNotification.Name("endTimer"),
+            object: nil
+        )
         if timerStatus == .pause {
             timer?.resume()
         }

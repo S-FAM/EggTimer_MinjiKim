@@ -83,8 +83,15 @@ final class TimerViewController: UIViewController {
         
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(reloadView(_:)),
-            name: UIApplication.willEnterForegroundNotification,
+            selector: #selector(willEnterForeground(_:)),
+            name: NSNotification.Name("sceneWillEnterForeground"),
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didEnterBackground(_:)),
+            name: NSNotification.Name("sceneDidEnterBackground"),
             object: nil
         )
     }
@@ -97,7 +104,6 @@ final class TimerViewController: UIViewController {
     @IBAction func didTappedStartButton(_ sender: UIButton) {
         switch viewModel.timerStatus {
         case .end:
-            // TODO: 함수로 묶어버리기
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
             eggButton.isEnabled = false
@@ -121,22 +127,17 @@ final class TimerViewController: UIViewController {
     @IBAction func didTappedCancelButton(_ sender: UIButton) {
         switch viewModel.timerStatus {
         case .start, .pause:
-            eggButton.isEnabled = true
-            eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
-            timeLabel.text = "00:00"
-            
-            circularSlider.maximumValue = 0.0
-            circularSlider.endPointValue = 0.0
-            
-            waterDropsView.isHidden = true
-            cancelButton.isEnabled = false
-            startButton.isEnabled = false
-            startButton.setTitle("시작", for: .normal)
-            
             viewModel.stopTimer()
         default:
             break
         }
+    }
+    
+    func updateTimeLabel(_ currentSec: Double) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:ss"
+        let time = Date(timeIntervalSince1970: TimeInterval(currentSec))
+        timeLabel.text = formatter.string(from: time)
     }
 }
 
@@ -146,39 +147,47 @@ extension TimerViewController {
     @objc func setTimer(_ notification: Notification) {
         guard let image = notification.object as? String else { return }
         
-        let time = Int(image.components(separatedBy: "egg").last!)
-        viewModel.selectedTime = time!
-        viewModel.setTime()
+        let time = Double(image.components(separatedBy: "egg").last!)
+        viewModel.currentSec = time! * 60.0
         
-        circularSlider.maximumValue = CGFloat(time! * 60)
-        circularSlider.endPointValue = CGFloat(time! * 60)
+        circularSlider.maximumValue = CGFloat(viewModel.currentSec)
+        circularSlider.endPointValue = CGFloat(viewModel.currentSec)
         
         eggButton.setImage(UIImage(named: image), for: .normal)
-        timeLabel.text = String(format: "%02d:%02d", viewModel.min, viewModel.sec)
+        updateTimeLabel(viewModel.currentSec)
         startButton.isEnabled = true
     }
     
     /// 타이머가 실행됨에 따라 UI 업데이트하기
     @objc func updateTimerUI(_ notification: Notification) {
-        guard let data = notification.object
-                as? (current: Int, minute: Int, second: Int) else { return }
-        // 튜플 네이밍으로 더 알아보기 쉽게.
-        
-        let currentSec = data.current
-        let min = data.minute
-        let sec = data.second
-
-        circularSlider.endPointValue = CGFloat(currentSec)
-        timeLabel.text = String(format: "%02d:%02d", min, sec)
+        circularSlider.endPointValue = CGFloat(viewModel.currentSec)
+        updateTimeLabel(viewModel.currentSec)
     }
     
     @objc func endTimer(_ notification: Notification) {
+        circularSlider.maximumValue = 0.0
+        circularSlider.endPointValue = 0.0
+        
         eggButton.isEnabled = true
         eggButton.setImage(UIImage(named: "egg_empty"), for: .normal)
+        
         waterDropsView.isHidden = true
+        cancelButton.isEnabled = false
+        startButton.isEnabled = false
+        eggButton.isEnabled = true
+        
+        timeLabel.text = "00:00"
+        startButton.setTitle("시작", for: .normal)
     }
     
-    @objc func reloadView(_ notification: Notification) {
-        viewWillAppear(true)
+    @objc func willEnterForeground(_ notification: Notification) {
+        waterDropsView.addAnimation()
+
+        guard let interval = notification.object as? Double else { return }
+        viewModel.currentSec -= interval
+    }
+    
+    @objc func didEnterBackground(_ notification: Notification) {
+        // 푸시알림 관련
     }
 }
