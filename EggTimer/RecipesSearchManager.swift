@@ -36,7 +36,6 @@ struct RecipesSearchManager: RecipesSearchManagerProtocol {
                 switch response.result {
                 case .success(let result):
                     completionHandler(result.items)
-                    print(result)
                 case .failure(let error):
                     print(error)
                 }
