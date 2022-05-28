@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		0F1DC73AEEEE9AF5F7731DD9 /* Pods_EggTimer_EggTimerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3112C50F5DF88C2733FEC158 /* Pods_EggTimer_EggTimerUITests.framework */; };
 		592AFB6FBAFD4C11E786EEE1 /* Pods_EggTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804B71AEB7CE8E76BCDC3288 /* Pods_EggTimer.framework */; };
+		A50A56ED2842161700BB82A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56EC2842161700BB82A5 /* SettingsViewController.swift */; };
+		A50A56F02842167A00BB82A5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56EF2842167A00BB82A5 /* SettingsViewModel.swift */; };
+		A50A56F22842168800BB82A5 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56F12842168800BB82A5 /* SettingsCell.swift */; };
+		A50A56F42842275A00BB82A5 /* SendMailFailAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56F32842275A00BB82A5 /* SendMailFailAlertViewController.swift */; };
+		A50A56FC28423C1300BB82A5 /* DarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56FB28423C1300BB82A5 /* DarkModeViewController.swift */; };
+		A50A56FF28423C3600BB82A5 /* DarkModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56FE28423C3600BB82A5 /* DarkModeCell.swift */; };
+		A50A570128423DF400BB82A5 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A570028423DF400BB82A5 /* DarkModeManager.swift */; };
 		A53535FD28334CD4008D865E /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FC28334CD4008D865E /* Recipes.swift */; };
 		A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FF28334D01008D865E /* RecipesSearchManager.swift */; };
 		A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360228334D18008D865E /* RecipesRequestModel.swift */; };
@@ -64,6 +71,13 @@
 		5E6410E47077580723138B44 /* Pods-EggTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-EggTimerTests/Pods-EggTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		804B71AEB7CE8E76BCDC3288 /* Pods_EggTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2357BD9007D6D94CB70183B /* Pods-EggTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerTests.release.xcconfig"; path = "Target Support Files/Pods-EggTimerTests/Pods-EggTimerTests.release.xcconfig"; sourceTree = "<group>"; };
+		A50A56EC2842161700BB82A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A50A56EF2842167A00BB82A5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A50A56F12842168800BB82A5 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		A50A56F32842275A00BB82A5 /* SendMailFailAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMailFailAlertViewController.swift; sourceTree = "<group>"; };
+		A50A56FB28423C1300BB82A5 /* DarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewController.swift; sourceTree = "<group>"; };
+		A50A56FE28423C3600BB82A5 /* DarkModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeCell.swift; sourceTree = "<group>"; };
+		A50A570028423DF400BB82A5 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
 		A53535FC28334CD4008D865E /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		A53535FF28334D01008D865E /* RecipesSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchManager.swift; sourceTree = "<group>"; };
 		A535360228334D18008D865E /* RecipesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequestModel.swift; sourceTree = "<group>"; };
@@ -154,6 +168,34 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A50A56EE2842161C00BB82A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A50A56EC2842161700BB82A5 /* SettingsViewController.swift */,
+				A50A56EF2842167A00BB82A5 /* SettingsViewModel.swift */,
+				A50A56F12842168800BB82A5 /* SettingsCell.swift */,
+				A50A56FD28423C1700BB82A5 /* DarkMode */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A50A56F52842275D00BB82A5 /* SendMailFailAlert */ = {
+			isa = PBXGroup;
+			children = (
+				A50A56F32842275A00BB82A5 /* SendMailFailAlertViewController.swift */,
+			);
+			path = SendMailFailAlert;
+			sourceTree = "<group>";
+		};
+		A50A56FD28423C1700BB82A5 /* DarkMode */ = {
+			isa = PBXGroup;
+			children = (
+				A50A56FB28423C1300BB82A5 /* DarkModeViewController.swift */,
+				A50A56FE28423C3600BB82A5 /* DarkModeCell.swift */,
+			);
+			path = DarkMode;
+			sourceTree = "<group>";
+		};
 		A53535FE28334CD8008D865E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				A53535FF28334D01008D865E /* RecipesSearchManager.swift */,
+				A50A570028423DF400BB82A5 /* DarkModeManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -296,6 +339,8 @@
 				A5D2808128333AB600228011 /* Recipe */,
 				A53536122833777E008D865E /* RecipeDetail */,
 				A535361B2833AA9B008D865E /* Eggs */,
+				A50A56EE2842161C00BB82A5 /* Settings */,
+				A50A56F52842275D00BB82A5 /* SendMailFailAlert */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -570,16 +615,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50A570128423DF400BB82A5 /* DarkModeManager.swift in Sources */,
 				A569DC3C2832924B009E579B /* AppDelegate.swift in Sources */,
 				A5D2807C28332F2F00228011 /* BasicRecipeCell.swift in Sources */,
 				A535361128337777008D865E /* RecipeDetailViewController.swift in Sources */,
+				A50A56ED2842161700BB82A5 /* SettingsViewController.swift in Sources */,
 				A5D28076283328D100228011 /* BasicRecipeViewController.swift in Sources */,
+				A50A56FC28423C1300BB82A5 /* DarkModeViewController.swift in Sources */,
 				A535360A2833532D008D865E /* NaverAPIKey.swift in Sources */,
 				A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */,
 				A53535FD28334CD4008D865E /* Recipes.swift in Sources */,
 				A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */,
+				A50A56FF28423C3600BB82A5 /* DarkModeCell.swift in Sources */,
 				A535361A2833AA97008D865E /* EggsViewController.swift in Sources */,
+				A50A56F22842168800BB82A5 /* SettingsCell.swift in Sources */,
 				A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */,
+				A50A56F42842275A00BB82A5 /* SendMailFailAlertViewController.swift in Sources */,
 				A53536212833B2F3008D865E /* TimerViewModel.swift in Sources */,
 				A569DC3E2832924B009E579B /* SceneDelegate.swift in Sources */,
 				A535361728339000008D865E /* TimerViewController.swift in Sources */,
@@ -589,6 +640,7 @@
 				A5BA6CD12837E50A00EC4722 /* NetworkCheck.swift in Sources */,
 				A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */,
 				A535360528334D22008D865E /* RecipesResponseModel.swift in Sources */,
+				A50A56F02842167A00BB82A5 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,7 +830,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alswl.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -807,7 +859,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alswl.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
