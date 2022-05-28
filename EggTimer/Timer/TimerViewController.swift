@@ -198,7 +198,7 @@ extension TimerViewController {
         let content = UNMutableNotificationContent()
         content.title = "이제 꺼내주세요~!"
         content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName("6.wav"))
+        content.sound = SoundManager.getSound().notificationSound
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: viewModel.currentSec, repeats: false)
         

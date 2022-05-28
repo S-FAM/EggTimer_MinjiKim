@@ -23,6 +23,13 @@ final class SettingsViewController: UIViewController {
         navigationController?.pushViewController(darkModeViewController, animated: true)
     }
     
+    func pushToSoundViewController() {
+        let soundViewController = storyboard?.instantiateViewController(
+            withIdentifier: SoundViewController.identifier
+        ) as! SoundViewController
+        navigationController?.pushViewController(soundViewController, animated: true)
+    }
+    
     func sendMail() {
         if MFMailComposeViewController.canSendMail() {
             let composeViewController = MFMailComposeViewController()
@@ -62,7 +69,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: pushToDarkModeViewController()
-        case 1: break
+        case 1: pushToSoundViewController()
         case 2: sendMail()
         case 3: break
         default: break
