@@ -15,11 +15,18 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    func pushToDarkModeViewController() {
+        let darkModeViewController = storyboard?.instantiateViewController(
+            withIdentifier: DarkModeViewController.identifier
+        ) as! DarkModeViewController
+        navigationController?.pushViewController(darkModeViewController, animated: true)
+    }
     
     func sendMail() {
         if MFMailComposeViewController.canSendMail() {
             let composeViewController = MFMailComposeViewController()
-//            composeViewController.overrideUserInterfaceStyle = DarkModeManager.getAppearance().rawValue == 0 ? .light : .dark
+            composeViewController.overrideUserInterfaceStyle = DarkModeManager.getAppearance().rawValue == 0 ? .light : .dark
             composeViewController.mailComposeDelegate = self
             composeViewController.setToRecipients(["kimminji080122@gmail.com"])
             composeViewController.setSubject("<EggTimer> 문의 및 의견")
@@ -54,7 +61,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0: break
+        case 0: pushToDarkModeViewController()
         case 1: break
         case 2: sendMail()
         case 3: break

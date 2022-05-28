@@ -38,10 +38,8 @@ final class NetworkCheck {
             self?.getConnectionType(path)
 
             if self?.isConnected == true {
-                print("연결됨!")
                 completionhandler(true)
             } else {
-                print("연결안됨!")
                 completionhandler(false)
             }
         }

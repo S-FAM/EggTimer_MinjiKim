@@ -468,6 +468,75 @@
             </objects>
             <point key="canvasLocation" x="2694" y="-208"/>
         </scene>
+        <!--Dark Mode View Controller-->
+        <scene sceneID="7mR-aB-gUr">
+            <objects>
+                <viewController storyboardIdentifier="DarkModeViewController" id="EfR-sT-0fN" customClass="DarkModeViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZIv-eY-FzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-fr-XPJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DarkModeCell" id="q54-21-62n" customClass="DarkModeCell" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q54-21-62n" id="guJ-su-eZF">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJd-i2-dav">
+                                                    <rect key="frame" x="20" y="21" width="37.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xka-zp-3bE">
+                                                    <rect key="frame" x="374" y="20.5" width="20" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="JEJ-B1-U6W"/>
+                                                        <constraint firstAttribute="height" constant="20" id="X05-cl-r1x"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aJd-i2-dav" firstAttribute="leading" secondItem="guJ-su-eZF" secondAttribute="leading" constant="20" id="E4c-Fa-Os3"/>
+                                                <constraint firstItem="xka-zp-3bE" firstAttribute="centerY" secondItem="guJ-su-eZF" secondAttribute="centerY" id="P1j-m1-GfM"/>
+                                                <constraint firstAttribute="trailing" secondItem="xka-zp-3bE" secondAttribute="trailing" constant="20" id="jCc-Km-Gfp"/>
+                                                <constraint firstItem="aJd-i2-dav" firstAttribute="centerY" secondItem="guJ-su-eZF" secondAttribute="centerY" id="vbg-4X-T8t"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="selectImage" destination="xka-zp-3bE" id="wEu-Ao-jK1"/>
+                                            <outlet property="titleLabel" destination="aJd-i2-dav" id="rYQ-v1-9Zs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EfR-sT-0fN" id="4bm-Mk-8qJ"/>
+                                    <outlet property="delegate" destination="EfR-sT-0fN" id="Kck-9N-PPQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RxC-ut-mwX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ukw-fr-XPJ" secondAttribute="bottom" id="253-1H-dVn"/>
+                            <constraint firstItem="ukw-fr-XPJ" firstAttribute="leading" secondItem="RxC-ut-mwX" secondAttribute="leading" id="M8M-Iw-RWQ"/>
+                            <constraint firstItem="RxC-ut-mwX" firstAttribute="trailing" secondItem="ukw-fr-XPJ" secondAttribute="trailing" id="UXR-KO-Hpv"/>
+                            <constraint firstItem="ukw-fr-XPJ" firstAttribute="top" secondItem="RxC-ut-mwX" secondAttribute="top" id="kd1-ZR-Eem"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="ukw-fr-XPJ" id="Alh-ki-Wip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z5E-AV-wYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3442" y="-208"/>
+        </scene>
         <!--Send Mail Fail Alert View Controller-->
         <scene sceneID="AGl-hP-0Ju">
             <objects>
@@ -543,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOy-Ez-zwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3423" y="-208"/>
+            <point key="canvasLocation" x="4180" y="-208"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ztN-WF-mkZ">
@@ -652,6 +721,7 @@
         <image name="alarm.fill" catalog="system" width="124" height="128"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="egg5" width="76" height="91"/>
         <image name="egg_empty" width="77" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
