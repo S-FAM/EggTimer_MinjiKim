@@ -16,6 +16,12 @@
 		A50A56FC28423C1300BB82A5 /* DarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56FB28423C1300BB82A5 /* DarkModeViewController.swift */; };
 		A50A56FF28423C3600BB82A5 /* DarkModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A56FE28423C3600BB82A5 /* DarkModeCell.swift */; };
 		A50A570128423DF400BB82A5 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50A570028423DF400BB82A5 /* DarkModeManager.swift */; };
+		A50A5708284263C700BB82A5 /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = A50A5702284263C700BB82A5 /* 4.wav */; };
+		A50A5709284263C700BB82A5 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A50A5703284263C700BB82A5 /* 1.wav */; };
+		A50A570A284263C700BB82A5 /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = A50A5704284263C700BB82A5 /* 6.wav */; };
+		A50A570B284263C700BB82A5 /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = A50A5705284263C700BB82A5 /* 5.wav */; };
+		A50A570C284263C700BB82A5 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A50A5706284263C700BB82A5 /* 2.wav */; };
+		A50A570D284263C700BB82A5 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = A50A5707284263C700BB82A5 /* 3.wav */; };
 		A53535FD28334CD4008D865E /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FC28334CD4008D865E /* Recipes.swift */; };
 		A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53535FF28334D01008D865E /* RecipesSearchManager.swift */; };
 		A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535360228334D18008D865E /* RecipesRequestModel.swift */; };
@@ -78,6 +84,12 @@
 		A50A56FB28423C1300BB82A5 /* DarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewController.swift; sourceTree = "<group>"; };
 		A50A56FE28423C3600BB82A5 /* DarkModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeCell.swift; sourceTree = "<group>"; };
 		A50A570028423DF400BB82A5 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
+		A50A5702284263C700BB82A5 /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
+		A50A5703284263C700BB82A5 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		A50A5704284263C700BB82A5 /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
+		A50A5705284263C700BB82A5 /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
+		A50A5706284263C700BB82A5 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		A50A5707284263C700BB82A5 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
 		A53535FC28334CD4008D865E /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		A53535FF28334D01008D865E /* RecipesSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchManager.swift; sourceTree = "<group>"; };
 		A535360228334D18008D865E /* RecipesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequestModel.swift; sourceTree = "<group>"; };
@@ -196,6 +208,19 @@
 			path = DarkMode;
 			sourceTree = "<group>";
 		};
+		A50A570E284263CE00BB82A5 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A50A5703284263C700BB82A5 /* 1.wav */,
+				A50A5706284263C700BB82A5 /* 2.wav */,
+				A50A5707284263C700BB82A5 /* 3.wav */,
+				A50A5702284263C700BB82A5 /* 4.wav */,
+				A50A5705284263C700BB82A5 /* 5.wav */,
+				A50A5704284263C700BB82A5 /* 6.wav */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 		A53535FE28334CD8008D865E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				A53536092833532D008D865E /* NaverAPIKey.swift */,
+				A50A570E284263CE00BB82A5 /* Sound */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -485,9 +511,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50A570D284263C700BB82A5 /* 3.wav in Resources */,
 				A569DC482832924C009E579B /* LaunchScreen.storyboard in Resources */,
+				A50A5709284263C700BB82A5 /* 1.wav in Resources */,
 				A569DC452832924C009E579B /* Assets.xcassets in Resources */,
+				A50A570B284263C700BB82A5 /* 5.wav in Resources */,
 				A569DC432832924B009E579B /* Main.storyboard in Resources */,
+				A50A570C284263C700BB82A5 /* 2.wav in Resources */,
+				A50A5708284263C700BB82A5 /* 4.wav in Resources */,
+				A50A570A284263C700BB82A5 /* 6.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

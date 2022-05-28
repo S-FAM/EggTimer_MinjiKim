@@ -8,6 +8,7 @@
 import HGCircularSlider
 import PanModal
 import UIKit
+import UserNotifications
 import WaterDrops
 
 final class TimerViewController: UIViewController {
@@ -148,7 +149,11 @@ extension TimerViewController {
         guard let image = notification.object as? String else { return }
         
         let time = Double(image.components(separatedBy: "egg").last!)
-        viewModel.currentSec = time! * 60.0
+        if time == Double(5) {
+            viewModel.currentSec = 10.0
+        } else {
+            viewModel.currentSec = time! * 60.0
+        }
         
         circularSlider.maximumValue = CGFloat(viewModel.currentSec)
         circularSlider.endPointValue = CGFloat(viewModel.currentSec)
@@ -185,9 +190,20 @@ extension TimerViewController {
 
         guard let interval = notification.object as? Double else { return }
         viewModel.currentSec -= interval
+        
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["done"])
     }
     
     @objc func didEnterBackground(_ notification: Notification) {
-        // 푸시알림 관련
+        let content = UNMutableNotificationContent()
+        content.title = "이제 꺼내주세요~!"
+        content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("6.wav"))
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: viewModel.currentSec, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "done", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
 }
