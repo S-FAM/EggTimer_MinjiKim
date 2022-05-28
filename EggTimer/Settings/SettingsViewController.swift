@@ -21,13 +21,15 @@ final class SettingsViewController: UIViewController {
             let composeViewController = MFMailComposeViewController()
 //            composeViewController.overrideUserInterfaceStyle = DarkModeManager.getAppearance().rawValue == 0 ? .light : .dark
             composeViewController.mailComposeDelegate = self
-            composeViewController.setToRecipients(["kimminji080122@gmail.com"])   // TODO: 앱 이름 넣기
+            composeViewController.setToRecipients(["kimminji080122@gmail.com"])
             composeViewController.setSubject("<EggTimer> 문의 및 의견")
             composeViewController.setMessageBody(viewModel.commentsBodyString(), isHTML: false)
             composeViewController.modalPresentationStyle = .fullScreen
             present(composeViewController, animated: true)
         } else {
-            let sendMailFailAlertViewController = SendMailFailAlertViewController()
+            let sendMailFailAlertViewController = storyboard?.instantiateViewController(
+                withIdentifier: SendMailFailAlertViewController.identifier
+            ) as! SendMailFailAlertViewController
             sendMailFailAlertViewController.modalPresentationStyle = .overCurrentContext
             present(sendMailFailAlertViewController, animated: false)
         }
