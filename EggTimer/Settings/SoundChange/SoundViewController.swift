@@ -18,6 +18,18 @@ final class SoundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAppearance()
+    }
+    
+    func setupAppearance() {
+        DarkModeManager.applyAppearance(
+            mode: DarkModeManager.getAppearance(),
+            viewController: self
+        )
+    }
 }
 
 // MARK: - UITableView
