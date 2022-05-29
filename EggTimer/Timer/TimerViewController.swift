@@ -57,7 +57,16 @@ final class TimerViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         waterDropsView.addAnimation()
+        setupAppearance()
+    }
+    
+    func setupAppearance() {
+        DarkModeManager.applyAppearance(
+            mode: DarkModeManager.getAppearance(),
+            viewController: self
+        )
     }
     
     func setupNoti() {
@@ -188,13 +197,16 @@ extension TimerViewController {
     @objc func willEnterForeground(_ notification: Notification) {
         waterDropsView.addAnimation()
 
-        guard let interval = notification.object as? Double else { return }
+        guard let interval = notification.object as? Double,
+              viewModel.currentSec > 0 else { return }
         viewModel.currentSec -= interval
         
         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["done"])
     }
     
     @objc func didEnterBackground(_ notification: Notification) {
+        guard viewModel.currentSec > 0 else { return }
+        
         let content = UNMutableNotificationContent()
         content.title = "이제 꺼내주세요~!"
         content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"

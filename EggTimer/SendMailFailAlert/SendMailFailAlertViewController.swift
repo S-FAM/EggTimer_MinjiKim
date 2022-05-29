@@ -19,6 +19,18 @@ final class SendMailFailAlertViewController: UIViewController {
         alertView.layer.cornerRadius = 12.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAppearance()
+    }
+    
+    func setupAppearance() {
+        DarkModeManager.applyAppearance(
+            mode: DarkModeManager.getAppearance(),
+            viewController: self
+        )
+    }
+    
     @IBAction func didTappedDismissButton(_ sender: UIButton) {
         dismiss(animated: false)
     }

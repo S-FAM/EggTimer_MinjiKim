@@ -37,6 +37,18 @@ final class RecipeViewController: UIViewController {
         checkNetwork()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupAppearance()
+    }
+    
+    func setupAppearance() {
+        DarkModeManager.applyAppearance(
+            mode: DarkModeManager.getAppearance(),
+            viewController: self
+        )
+    }
+    
     // 세그웨이 실행되면 선택된 레시피를 상세화면으로 넘겨주면서 push 하기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {

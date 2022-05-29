@@ -15,6 +15,18 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAppearance()
+    }
+    
+    func setupAppearance() {
+        DarkModeManager.applyAppearance(
+            mode: DarkModeManager.getAppearance(),
+            viewController: self
+        )
+    }
 
     func pushToDarkModeViewController() {
         let darkModeViewController = storyboard?.instantiateViewController(
@@ -48,6 +60,13 @@ final class SettingsViewController: UIViewController {
             present(sendMailFailAlertViewController, animated: false)
         }
     }
+    
+    func openHowtoUse() {
+        let link = "https://midi-dill-147.notion.site/EggTimer-22bab711a2fa4743a0f689da9e963ec2"
+        guard let url = URL(string: link),
+              UIApplication.shared.canOpenURL(url) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
 
 // MARK: - UITableView
@@ -71,7 +90,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         case 0: pushToDarkModeViewController()
         case 1: pushToSoundViewController()
         case 2: sendMail()
-        case 3: break
+        case 3: openHowtoUse()
         default: break
         }
     }

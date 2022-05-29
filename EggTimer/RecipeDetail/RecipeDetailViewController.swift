@@ -35,6 +35,18 @@ final class RecipeDetailViewController: UIViewController {
         checkNetwork()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAppearance()
+    }
+    
+    func setupAppearance() {
+        DarkModeManager.applyAppearance(
+            mode: DarkModeManager.getAppearance(),
+            viewController: self
+        )
+    }
+    
     @IBAction func leftSwipeGesture(_ sender: UISwipeGestureRecognizer) {
         navigationController?.popViewController(animated: true)
     }
