@@ -104,10 +104,9 @@
                                             <constraint firstAttribute="width" constant="70" id="TpX-sf-Rqp"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="취소">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="stop.fill" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="stop.fill" catalog="system"/>
                                         <connections>
                                             <action selector="didTappedCancelButton:" destination="ecq-mc-Fez" eventType="touchUpInside" id="9hL-v1-JoA"/>
                                         </connections>
@@ -118,13 +117,13 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Rj0-7e-oSE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="시작"/>
+                                        <state key="normal" image="play.fill" catalog="system"/>
                                         <state key="selected" title="일시정지"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="시작">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="0.0"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTappedStartButton:" destination="ecq-mc-Fez" eventType="touchUpInside" id="YqT-4J-XD8"/>
@@ -829,6 +828,8 @@
         <image name="egg8" width="76" height="91"/>
         <image name="egg_empty" width="77" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.60399997234344482" blue="0.38400000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

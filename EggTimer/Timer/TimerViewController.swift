@@ -109,18 +109,18 @@ final class TimerViewController: UIViewController {
             waterDropsView.isHidden = false
             eggButton.isEnabled = false
             cancelButton.isEnabled = true
-            startButton.setTitle("일시정지", for: .normal)
+            startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             viewModel.startTimer()
         case .start:
             viewModel.timerStatus = .pause
             waterDropsView.isHidden = true
-            startButton.setTitle("시작", for: .normal)
+            startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             viewModel.timer?.suspend()
         case .pause:
             viewModel.timerStatus = .start
             waterDropsView.isHidden = false
             eggButton.isEnabled = false
-            startButton.setTitle("일시정지", for: .normal)
+            startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             viewModel.timer?.resume()
         }
     }
@@ -182,7 +182,7 @@ extension TimerViewController {
         eggButton.isEnabled = true
         
         timeLabel.text = "00:00"
-        startButton.setTitle("시작", for: .normal)
+        startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
     
     @objc func willEnterForeground(_ notification: Notification) {
