@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OSK-iA-TrH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5HF-wc-h2h">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -786,6 +786,38 @@
             </objects>
             <point key="canvasLocation" x="2694" y="282"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="y46-Ev-jRk">
+            <objects>
+                <viewController id="5HF-wc-h2h" customClass="SplashViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5rZ-b5-kR8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="egg8" translatesAutoresizingMaskIntoConstraints="NO" id="Su7-CG-RoK">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3Ym-kM-acu"/>
+                                    <constraint firstAttribute="height" constant="100" id="GC3-rk-LH5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XeX-3x-rEy"/>
+                        <color key="backgroundColor" name="SubColor"/>
+                        <constraints>
+                            <constraint firstItem="Su7-CG-RoK" firstAttribute="centerY" secondItem="5rZ-b5-kR8" secondAttribute="centerY" id="Gxu-NC-PGr"/>
+                            <constraint firstItem="Su7-CG-RoK" firstAttribute="centerX" secondItem="5rZ-b5-kR8" secondAttribute="centerX" id="KlV-gI-exe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Su7-CG-RoK" id="bD7-Co-eeI"/>
+                        <segue destination="OSK-iA-TrH" kind="presentation" identifier="presentTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Fkg-6W-JNc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQB-Kw-Egh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="96"/>
+        </scene>
     </scenes>
     <resources>
         <image name="alarm" catalog="system" width="124" height="128"/>
@@ -794,6 +826,7 @@
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="egg5" width="76" height="91"/>
+        <image name="egg8" width="76" height="91"/>
         <image name="egg_empty" width="77" height="92"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
