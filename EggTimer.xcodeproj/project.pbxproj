@@ -54,6 +54,7 @@
 		A5D2807E28333A9F00228011 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807D28333A9F00228011 /* RecipeViewController.swift */; };
 		A5D2808028333AB200228011 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807F28333AB100228011 /* RecipeViewModel.swift */; };
 		A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2808228333B5D00228011 /* RecipeCell.swift */; };
+		A5E6DE562843335B009A5E86 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6DE552843335B009A5E86 /* SplashViewController.swift */; };
 		F2311F6B4B4D395293AE6AE7 /* Pods_EggTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		A5D2807D28333A9F00228011 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		A5D2807F28333AB100228011 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		A5D2808228333B5D00228011 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		A5E6DE552843335B009A5E86 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AB8CBA33673432F9FB5B69C2 /* Pods-EggTimer-EggTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer-EggTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CF0ADCB486FFDFC51C1C42 /* Pods-EggTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.release.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				A535361B2833AA9B008D865E /* Eggs */,
 				A50A56EE2842161C00BB82A5 /* Settings */,
 				A50A56F52842275D00BB82A5 /* SendMailFailAlert */,
+				A5E6DE572843335F009A5E86 /* Splash */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -405,6 +408,14 @@
 				A5D2808228333B5D00228011 /* RecipeCell.swift */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		A5E6DE572843335F009A5E86 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A5E6DE552843335B009A5E86 /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -673,6 +684,7 @@
 				A5D28076283328D100228011 /* BasicRecipeViewController.swift in Sources */,
 				A50A56FC28423C1300BB82A5 /* DarkModeViewController.swift in Sources */,
 				A535360A2833532D008D865E /* NaverAPIKey.swift in Sources */,
+				A5E6DE562843335B009A5E86 /* SplashViewController.swift in Sources */,
 				A535360328334D18008D865E /* RecipesRequestModel.swift in Sources */,
 				A53535FD28334CD4008D865E /* Recipes.swift in Sources */,
 				A50A5710284268A400BB82A5 /* SoundViewController.swift in Sources */,
@@ -887,7 +899,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -916,7 +928,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
