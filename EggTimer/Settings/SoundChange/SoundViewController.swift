@@ -13,6 +13,8 @@ final class SoundViewController: UIViewController {
     
     var player: AVAudioPlayer!
     
+    @IBOutlet weak var tableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,7 +35,11 @@ extension SoundViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row, "터치!")
+        let sound = Sound(rawValue: indexPath.row)!
+        SoundManager.setSound(sound: sound)
+        
+        tableView.reloadData()
+        
         let soundName = String(indexPath.row+1)
         guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
         

@@ -600,6 +600,9 @@
                             <constraint firstAttribute="bottom" secondItem="FAW-Pk-fmG" secondAttribute="bottom" id="Vot-Pn-KhP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="FAW-Pk-fmG" id="MPp-gZ-cHb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fee-3L-MPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

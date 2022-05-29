@@ -45,11 +45,8 @@ extension DarkModeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            DarkModeManager.setApperance(mode: .light)
-        } else {
-            DarkModeManager.setApperance(mode: .dark)
-        }
+        let mode = Mode(rawValue: indexPath.row)!
+        DarkModeManager.setApperance(mode: mode)
         
         setupAppearance()
         tableView.reloadData()
