@@ -18,15 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     ) -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
     }
-    
-    /// Foreground에서 push 알림 받기
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        willPresent notification: UNNotification,
-        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-    ) {
-        completionHandler([.alert, .sound])
-    }
 
     func application(
         _ application: UIApplication,

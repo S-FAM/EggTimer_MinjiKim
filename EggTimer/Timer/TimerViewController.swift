@@ -193,31 +193,19 @@ extension TimerViewController {
         timeLabel.text = "00:00"
         startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         
-        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["done"])
+        viewModel.removePushNotification()
     }
     
     @objc func willEnterForeground(_ notification: Notification) {
         waterDropsView.addAnimation()
 
-        guard let interval = notification.object as? Double,
-              viewModel.currentSec > 0 else { return }
-        viewModel.currentSec -= interval
+        guard let interval = notification.object as? Double else { return }
         
-        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["done"])
+        viewModel.currentSec -= interval
+        viewModel.removePushNotification()
     }
     
     @objc func didEnterBackground(_ notification: Notification) {
-        guard viewModel.currentSec > 0 else { return }
-        
-        let content = UNMutableNotificationContent()
-        content.title = "이제 꺼내주세요~!"
-        content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"
-        content.sound = SoundManager.getSound().notificationSound
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: viewModel.currentSec, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "done", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request)
+        viewModel.makePushNotification()
     }
 }

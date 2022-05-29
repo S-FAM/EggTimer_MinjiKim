@@ -13,8 +13,6 @@ enum TimerStatus {
     case start, pause, end
 }
 
-// TODO: NotificationCenter를 Protocol로 바꿔보기!
-
 final class TimerViewModel {
     var timerStatus: TimerStatus = .end
     var timer: DispatchSourceTimer?
@@ -26,19 +24,9 @@ final class TimerViewModel {
     
     var player: AVAudioPlayer!
     
+    /// 타이머 시작
     func startTimer() {
         if timer == nil {
-            let content = UNMutableNotificationContent()
-            content.title = "이제 꺼내주세요~!"
-            content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"
-            content.sound = SoundManager.getSound().notificationSound
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.currentSec, repeats: false)
-            
-            let request = UNNotificationRequest(identifier: "done", content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request)
-            
             timer = DispatchSource.makeTimerSource(flags: [], queue: .main)
             timer?.schedule(deadline: .now(), repeating: 0.01)
             timer?.setEventHandler(handler: { [weak self] in
@@ -53,27 +41,64 @@ final class TimerViewModel {
 
                 if self.currentSec <= 0 {
                     self.stopTimer()
-                    
-                    NotificationCenter.default.post(
-                        name: NSNotification.Name("endTimer"),
-                        object: nil
-                    )
+                    self.playSound()
                 }
             })
             timer?.resume()
         }
     }
     
+    /// 타이머 종료
     func stopTimer() {
-        NotificationCenter.default.post(
-            name: NSNotification.Name("endTimer"),
-            object: nil
-        )
+        postEndTimerNoti()
         if timerStatus == .pause {
             timer?.resume()
         }
         timerStatus = .end
         timer?.cancel()
         timer = nil
+    }
+    
+    /// done 푸시 알림 노티 만들기
+    func makePushNotification() {
+        guard currentSec > 0 else { return }
+        let content = UNMutableNotificationContent()
+        content.title = "이제 꺼내주세요~!"
+        content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"
+        content.sound = SoundManager.getSound().notificationSound
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: currentSec, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "done", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    /// done 푸시 알림 노티 삭제하기
+    func removePushNotification() {
+        guard currentSec > 0 else { return }
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["done"])
+    }
+    
+    /// endTimer 노티 발송
+    func postEndTimerNoti() {
+        NotificationCenter.default.post(
+            name: NSNotification.Name("endTimer"),
+            object: nil
+        )
+    }
+    
+    /// 알림음 실행
+    func playSound() {
+        let soundName = String(SoundManager.getSound().rawValue + 1)
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
