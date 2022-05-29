@@ -192,6 +192,8 @@ extension TimerViewController {
         
         timeLabel.text = "00:00"
         startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["done"])
     }
     
     @objc func willEnterForeground(_ notification: Notification) {

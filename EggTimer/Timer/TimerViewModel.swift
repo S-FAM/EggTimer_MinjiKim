@@ -5,8 +5,9 @@
 //  Created by 김민지 on 2022/05/17.
 //  타이머 화면 뷰 모델
 
-import AudioToolbox
+import AVFoundation
 import Foundation
+import UserNotifications
 
 enum TimerStatus {
     case start, pause, end
@@ -23,8 +24,21 @@ final class TimerViewModel {
     var min: Int = 0
     var sec: Int = 0
     
+    var player: AVAudioPlayer!
+    
     func startTimer() {
         if timer == nil {
+            let content = UNMutableNotificationContent()
+            content.title = "이제 꺼내주세요~!"
+            content.body = "원하는 익힘의 삶은 달걀이 완성되었어요! 꺼내서 바로 찬물에 넣어주세요~"
+            content.sound = SoundManager.getSound().notificationSound
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.currentSec, repeats: false)
+            
+            let request = UNNotificationRequest(identifier: "done", content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request)
+            
             timer = DispatchSource.makeTimerSource(flags: [], queue: .main)
             timer?.schedule(deadline: .now(), repeating: 0.01)
             timer?.setEventHandler(handler: { [weak self] in
@@ -39,7 +53,7 @@ final class TimerViewModel {
 
                 if self.currentSec <= 0 {
                     self.stopTimer()
-                    AudioServicesPlaySystemSound(1005)
+                    
                     NotificationCenter.default.post(
                         name: NSNotification.Name("endTimer"),
                         object: nil
