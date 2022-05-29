@@ -35,8 +35,8 @@ final class TimerViewController: UIViewController {
         maxDropSize: 20,
         minLength: 50,
         maxLength: eggButton.bounds.height,
-        minDuration: 4,
-        maxDuration: 8
+        minDuration: 1,
+        maxDuration: 5
     )
     // TODO: 시작할 때 흰달걀 이미지 넣고 상태별로 서서히 변하기
     
