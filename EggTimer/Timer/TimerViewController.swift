@@ -38,10 +38,10 @@ final class TimerViewController: UIViewController {
         minDuration: 1,
         maxDuration: 5
     )
-    // TODO: 시작할 때 흰달걀 이미지 넣고 상태별로 서서히 변하기
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         [cancelButton, startButton].forEach {
             $0.layer.cornerRadius = $0.bounds.width / 2
         }

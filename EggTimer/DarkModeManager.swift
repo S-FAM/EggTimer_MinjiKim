@@ -8,17 +8,14 @@
 import UIKit
 
 enum Mode: Int {
-    case light
-    case dark
+    case light, dark
 }
-
-let key = "Appearance"
 
 final class DarkModeManager {
     /// Appearance 가져오기 (Default: light)
     static func getAppearance() -> Mode {
         guard let appearance = (
-            UserDefaults.standard.value(forKey: key) as AnyObject
+            UserDefaults.standard.value(forKey: .appearance) as AnyObject
         ).integerValue else { return Mode(rawValue: 0)! }
 
         return Mode(rawValue: appearance)!
@@ -26,7 +23,7 @@ final class DarkModeManager {
 
     /// Appearance 저장하기
     static func setApperance(mode: Mode) {
-        UserDefaults.standard.setValue(mode.rawValue, forKey: key)
+        UserDefaults.standard.setValue(mode.rawValue, forKey: .appearance)
         UserDefaults.standard.synchronize()
     }
 

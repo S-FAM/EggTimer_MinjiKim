@@ -33,7 +33,7 @@ final class SoundManager {
     /// Sound 가져오기 (Default: sound1)
     static func getSound() -> Sound {
         guard let sound = (
-            UserDefaults.standard.value(forKey: "Sound") as AnyObject
+            UserDefaults.standard.value(forKey: .sound) as AnyObject
         ).integerValue else { return Sound(rawValue: 0)! }
 
         return Sound(rawValue: sound)!
@@ -41,7 +41,7 @@ final class SoundManager {
 
     /// Sound 저장하기
     static func setSound(sound: Sound) {
-        UserDefaults.standard.setValue(sound.rawValue, forKey: "Sound")
+        UserDefaults.standard.setValue(sound.rawValue, forKey: .sound)
         UserDefaults.standard.synchronize()
     }
 }

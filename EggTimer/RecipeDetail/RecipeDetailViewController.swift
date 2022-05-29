@@ -51,6 +51,7 @@ final class RecipeDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    /// 네트워크 연결 확인하기
     func checkNetwork() {
         NetworkCheck.shared.startMonitoring { [weak self] isConnect in
             guard let self = self else { return }

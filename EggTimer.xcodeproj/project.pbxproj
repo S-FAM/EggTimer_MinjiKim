@@ -55,6 +55,8 @@
 		A5D2808028333AB200228011 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2807F28333AB100228011 /* RecipeViewModel.swift */; };
 		A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2808228333B5D00228011 /* RecipeCell.swift */; };
 		A5E6DE562843335B009A5E86 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6DE552843335B009A5E86 /* SplashViewController.swift */; };
+		A5E6DE59284388D6009A5E86 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6DE58284388D6009A5E86 /* NotificationName.swift */; };
+		A5E6DE5B28438970009A5E86 /* UserdefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6DE5A28438970009A5E86 /* UserdefaultsKey.swift */; };
 		F2311F6B4B4D395293AE6AE7 /* Pods_EggTimerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		A5D2807F28333AB100228011 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		A5D2808228333B5D00228011 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		A5E6DE552843335B009A5E86 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A5E6DE58284388D6009A5E86 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		A5E6DE5A28438970009A5E86 /* UserdefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsKey.swift; sourceTree = "<group>"; };
 		AB8CBA33673432F9FB5B69C2 /* Pods-EggTimer-EggTimerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer-EggTimerUITests.release.xcconfig"; path = "Target Support Files/Pods-EggTimer-EggTimerUITests/Pods-EggTimer-EggTimerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B32B7088592E8696CE2862F0 /* Pods_EggTimerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CF0ADCB486FFDFC51C1C42 /* Pods-EggTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.release.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.release.xcconfig"; sourceTree = "<group>"; };
@@ -268,19 +272,13 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
-		A535360E28336C18008D865E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				A535360C28336C12008D865E /* String+.swift */,
-			);
-			name = Extension;
-			sourceTree = "<group>";
-		};
 		A535360F28336C1F008D865E /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				A535360E28336C18008D865E /* Extension */,
-				A5BA6CD22837E50F00EC4722 /* Network */,
+				A535360C28336C12008D865E /* String+.swift */,
+				A5BA6CD02837E50A00EC4722 /* NetworkCheck.swift */,
+				A5E6DE58284388D6009A5E86 /* NotificationName.swift */,
+				A5E6DE5A28438970009A5E86 /* UserdefaultsKey.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -366,14 +364,6 @@
 				A569DC5E2832924C009E579B /* EggTimerUITestsLaunchTests.swift */,
 			);
 			path = EggTimerUITests;
-			sourceTree = "<group>";
-		};
-		A5BA6CD22837E50F00EC4722 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				A5BA6CD02837E50A00EC4722 /* NetworkCheck.swift */,
-			);
-			name = Network;
 			sourceTree = "<group>";
 		};
 		A5D28077283328D600228011 /* Scene */ = {
@@ -691,6 +681,8 @@
 				A5D2808328333B5D00228011 /* RecipeCell.swift in Sources */,
 				A50A56FF28423C3600BB82A5 /* DarkModeCell.swift in Sources */,
 				A535361A2833AA97008D865E /* EggsViewController.swift in Sources */,
+				A5E6DE5B28438970009A5E86 /* UserdefaultsKey.swift in Sources */,
+				A5E6DE59284388D6009A5E86 /* NotificationName.swift in Sources */,
 				A50A56F22842168800BB82A5 /* SettingsCell.swift in Sources */,
 				A50A571328426A7700BB82A5 /* SoundCell.swift in Sources */,
 				A535360028334D01008D865E /* RecipesSearchManager.swift in Sources */,

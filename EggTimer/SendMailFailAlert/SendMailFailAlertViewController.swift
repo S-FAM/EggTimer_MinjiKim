@@ -3,7 +3,7 @@
 //  EggTimer
 //
 //  Created by 김민지 on 2022/05/28.
-//
+//  의견 보내기 실패 화면 ViewController
 
 import Foundation
 import UIKit

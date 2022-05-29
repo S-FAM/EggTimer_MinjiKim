@@ -3,7 +3,7 @@
 //  EggTimer
 //
 //  Created by 김민지 on 2022/05/28.
-//
+//  다크 모드 화면 ViewController
 
 import Foundation
 import UIKit
@@ -31,20 +31,35 @@ final class DarkModeViewController: UIViewController {
     }
 }
 
+// MARK: - UITableview
 extension DarkModeViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    /// 셀 개수
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return 2
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DarkModeCell.identifier) as? DarkModeCell else { return UITableViewCell() }
+    /// 셀 구성
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: DarkModeCell.identifier
+        ) as? DarkModeCell else { return UITableViewCell() }
         
         cell.update(indexPath.row, DarkModeManager.getAppearance())
-        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /// 셀 클릭
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         let mode = Mode(rawValue: indexPath.row)!
         DarkModeManager.setApperance(mode: mode)
         

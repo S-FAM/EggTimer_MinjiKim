@@ -3,7 +3,7 @@
 //  EggTimer
 //
 //  Created by 김민지 on 2022/05/29.
-//
+//  스플래쉬 화면 ViewController
 
 import UIKit
 import WaterDrops

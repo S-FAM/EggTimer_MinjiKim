@@ -8,7 +8,7 @@
 import UIKit
 
 final class SettingsViewModel {
-    
+    /// 의견 보내기 메일 기본 내용
     func commentsBodyString() -> String {
         return """
                 이곳에 내용을 작성해주세요.

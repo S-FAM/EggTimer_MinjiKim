@@ -3,7 +3,7 @@
 //  EggTimer
 //
 //  Created by 김민지 on 2022/05/28.
-//
+//  알림음 변경 화면 ViewController
 
 import AVFoundation
 import UIKit
@@ -34,19 +34,33 @@ final class SoundViewController: UIViewController {
 
 // MARK: - UITableView
 extension SoundViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    /// 셀 개수
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return 6
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SoundCell.identifier) as? SoundCell else { return UITableViewCell() }
+    /// 셀 구성
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SoundCell.identifier
+        ) as? SoundCell else { return UITableViewCell() }
         
         cell.update(indexPath.row)
-        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /// 셀 클릭
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         let sound = Sound(rawValue: indexPath.row)!
         SoundManager.setSound(sound: sound)
         

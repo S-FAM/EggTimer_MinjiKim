@@ -49,7 +49,7 @@ final class RecipeViewController: UIViewController {
         )
     }
     
-    // 세그웨이 실행되면 선택된 레시피를 상세화면으로 넘겨주면서 push 하기
+    /// 세그웨이 실행되면 선택된 레시피를 상세화면으로 넘겨주면서 push 하기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             let vc = segue.destination as? RecipeDetailViewController
@@ -61,6 +61,7 @@ final class RecipeViewController: UIViewController {
         }
     }
     
+    /// 네트워크 연결 확인하기
     func checkNetwork() {
         NetworkCheck.shared.startMonitoring { [weak self] isConnect in
             guard let self = self else { return }
@@ -121,7 +122,8 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
         let display = viewModel.display
         
         // 제일 뒤에서 3번째 행이면 다음 페이지 보여주기
-        guard (currentRow % display) == (display - 3) && (currentRow / display) == (currentPage - 1) else { return }
+        guard (currentRow % display) == (display - 3) &&
+                (currentRow / display) == (currentPage - 1) else { return }
         
         viewModel.requestRecipesList {
             DispatchQueue.main.async { [weak self] in
@@ -133,8 +135,10 @@ extension RecipeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     /// 셀이 클릭되었을 때
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 세그웨이 실행! -> 레시피 상세 화면 push 하기
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         performSegue(withIdentifier: segueIdentifier, sender: indexPath.row)
     }
 }

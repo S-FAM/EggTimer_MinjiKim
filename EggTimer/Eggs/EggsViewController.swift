@@ -54,18 +54,25 @@ extension EggsViewController: UICollectionViewDataSource, UICollectionViewDelega
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
+        
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: EggsCell.identifier,
             for: indexPath
         ) as? EggsCell else { return UICollectionViewCell() }
         
         cell.update(indexPath.row)
-        
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: NSNotification.Name("selectedEgg"), object: images[indexPath.row])
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        
+        NotificationCenter.default.post(
+            name: NSNotification.Name("selectedEgg"),
+            object: images[indexPath.row]
+        )
         dismiss(animated: true)
     }
 }
