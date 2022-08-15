@@ -198,14 +198,19 @@ extension TimerViewController {
     
     @objc func willEnterForeground(_ notification: Notification) {
         waterDropsView.addAnimation()
-
-        guard let interval = notification.object as? Double else { return }
-        
-        viewModel.currentSec -= interval
-        viewModel.removePushNotification()
+        let startButtonImage = startButton.imageView?.image
+        if startButtonImage == UIImage(systemName: "pause.fill") {
+            guard let interval = notification.object as? Double else { return }
+          
+            viewModel.currentSec -= interval
+            viewModel.removePushNotification()
+        }
     }
     
     @objc func didEnterBackground(_ notification: Notification) {
-        viewModel.makePushNotification()
+        let startButtonImage = startButton.imageView?.image
+        if startButtonImage == UIImage(systemName: "pause.fill") {
+            viewModel.makePushNotification()
+        }
     }
 }
