@@ -96,6 +96,7 @@ final class TimerViewModel {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player.play()
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             
         } catch let error {
             print(error.localizedDescription)
