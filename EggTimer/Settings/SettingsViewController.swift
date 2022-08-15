@@ -51,8 +51,8 @@ final class SettingsViewController: UIViewController {
             let currentMode = DarkModeManager.getAppearance().rawValue
             composeViewController.overrideUserInterfaceStyle = currentMode == 0 ? .light : .dark
             composeViewController.mailComposeDelegate = self
-            composeViewController.setToRecipients(["kimminji080122@gmail.com"])
-            composeViewController.setSubject("<EggTimer> 문의 및 의견")
+            composeViewController.setToRecipients(["eggmer.help@gmail.com"])
+            composeViewController.setSubject("<Eggmer> 문의 및 의견")
             composeViewController.setMessageBody(viewModel.commentsBodyString(), isHTML: false)
             composeViewController.modalPresentationStyle = .fullScreen
             present(composeViewController, animated: true)
