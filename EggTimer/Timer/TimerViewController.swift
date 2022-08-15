@@ -158,11 +158,7 @@ extension TimerViewController {
         guard let image = notification.object as? String else { return }
         
         let time = Double(image.components(separatedBy: "egg").last!)
-        if time == Double(5) {
-            viewModel.currentSec = 10.0
-        } else {
-            viewModel.currentSec = time! * 60.0
-        }
+        viewModel.currentSec = time! * 60.0
         
         circularSlider.maximumValue = CGFloat(viewModel.currentSec)
         circularSlider.endPointValue = CGFloat(viewModel.currentSec)
