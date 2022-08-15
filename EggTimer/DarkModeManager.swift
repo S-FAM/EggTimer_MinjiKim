@@ -42,5 +42,11 @@ final class DarkModeManager {
             viewController.navigationController?.navigationBar.tintColor = .white
             viewController.tabBarController?.overrideUserInterfaceStyle = .dark
         }
+
+        if #available(iOS 13.0, *) {
+            UIApplication.shared.statusBarStyle = mode == .light ? .darkContent : .lightContent
+        } else {
+            UIApplication.shared.statusBarStyle = .default
+        }
     }
 }
